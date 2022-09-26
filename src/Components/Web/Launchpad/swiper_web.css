@@ -16,12 +16,25 @@
     position: relative;
   }
   
-  .container{
-    position: absolute;
-    width: 50vw;
+.container{
+  position: absolute;
+  width: 50vw;
+  height: 90vh;
+  overflow: hidden;
+  background: transparent;
+  border: '1px solid white';
+  top:5vh;
+}
+
+@media screen and (min-width:1229px) and (max-width: 1440px){
+  .App{
+    z-index: 5;
+    top: 100px;
+    width: 60vh;
     height: 90vh;
-    overflow: hidden;
-    background: transparent;
-    border: '1px solid white';
-    top:5vh;
   }
+  .container{
+    height: 100vh;
+    top: 5vh;
+  }
+}

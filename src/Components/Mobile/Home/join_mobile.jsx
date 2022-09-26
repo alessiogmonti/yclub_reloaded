@@ -4,6 +4,12 @@ import { Divider, Box, Show, IconButton, SimpleGrid, useColorModeValue } from '@
 import { FaTwitter, FaTelegram, FaInstagram, FaMedium, FaCheckDouble } from 'react-icons/fa'
 import FormManager from "../../../Utils/form"
 
+const socialLinks = [ {
+    icon: <FaTwitter/>, link:"https://twitter.com/yclub_io"},
+    {icon: <FaTelegram/>, link:"https://t.me/yclub_official" }, 
+    {icon: <FaInstagram/>, link:"https://www.instagram.com/yclub.io/" },
+    {icon: <FaMedium/>, link:"https://medium.com/@yclub"}  ]
+
 export const MobileJoin = () => (
     <Container height="100vh" width={'100vw'} position={'relative'} gap={[null, "10%"]} direction={'column'}>
         <Hero title={'JOIN'} subtitle={'THE CLUB'}/>
@@ -20,10 +26,13 @@ const Socials = () => (
     <Box height={"25%"} width={'60%'}
         bg={'light'} _dark={{bg:'dark', borderColor:'accent'}} borderColor={'white'} borderWidth={'1px'} rounded={'50px'}>
         <SimpleGrid columns={2} spacingX={1} width={'100%'} height={'100%'}>
-            <IconButton variant={'ghost'} color={'accent'} isRound size={'xl'} fontSize={'70px'} aria-label={'twitter'} icon={<FaTwitter />} />
-            <IconButton variant={'ghost'} color={'accent'} isRound size={'xl'} fontSize={'70px'} aria-label={'telegram'}icon={<FaTelegram />} />
-            <IconButton variant={'ghost'} color={'accent'} isRound size={'xl'} fontSize={'70px'} aria-label={'instagram'}icon={<FaInstagram />} />
-            <IconButton variant={'ghost'} color={'accent'} isRound size={'xl'} fontSize={'70px'} aria-label={'medium'}icon={<FaMedium />} />
+        {socialLinks.map(
+                (d, idx) => 
+                <Link isExternal href={d.link}>
+                    <IconButton variant={'ghost'} color={'accent'} isRound size={'xl'} fontSize={'70px'} aria-label={'medium'}icon={d.icon} />
+                </Link>
+                )
+            }
         </SimpleGrid>
     </Box>
 )
