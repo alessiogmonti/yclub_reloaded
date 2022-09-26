@@ -1,6 +1,6 @@
 import { Hero } from '../../Mobile/Hero'
 import { Container } from '../../Global/Container'
-import { Divider, Box, Show, IconButton, SimpleGrid, useColorModeValue } from '@chakra-ui/react'
+import { Divider, Box, Show, IconButton, SimpleGrid, useColorModeValue, Link } from '@chakra-ui/react'
 import { FaTwitter, FaTelegram, FaInstagram, FaMedium, FaCheckDouble } from 'react-icons/fa'
 import FormManager from "../../../Utils/form"
 
