@@ -87,14 +87,14 @@ const MenuLinks = () => {
         HOME 
       </Link>
     </Heading>
-    <VStack mt={10} spacing={10} align={'center'}>
+    <VStack mt={10} spacing={5} align={'center'}>
       { mainmenu.map( (d, index) => 
           <Heading onClick={() => toggle(index)} variant="Menu" textAlign={'center'} color={index==active? 'white' : useColorModeValue('rgba(240,240,240,0.9)','rgba(155,155,155,1)')}>
             {d.field}
           </Heading>
         )}
       <Divider width={'60%'}/> 
-      <VStack mt={10} spacing={'20%'} align={'center'}>     
+      <VStack mt={10} spacing={8} align={'center'} overflow={'visible'}>     
         { mainmenu[active].sublinks.map( (d) =>
               d.external ? (
                 <Link isExternal href={d.external} >
