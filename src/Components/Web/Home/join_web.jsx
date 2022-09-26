@@ -42,6 +42,14 @@ export const WebJoin = () => (
                 <Box display={'flex'} justifyContent={'flex-end'}>
                     <Box position={'absolute'} left={"-150px"}>
                         <Yacht/>
+                        <Box position={'absolute'} left={"150px"} bottom={0} bg={'whiteAlpha.400'} height={'20px'} width={'100vw'}>
+                            <Flex>
+                                <Text ml={1} pl={1}> YCLUB &copy; 2022</Text>
+                                <Spacer />
+                                <Text mr={2} pr={2}>Privacy Policy</Text>
+                                <Text ml={2} pl={2} mr={1} pr={1}>Disclaimer</Text>
+                            </Flex>
+                        </Box>
                     </Box>
                 </Box>
             </VStack>
