@@ -5,7 +5,7 @@ import { Logo } from '../../Global/Logo'
 import { Box, Divider, Show } from '@chakra-ui/react'
 
 export const MobileLanding = () => (
-  <Container height="100vh" direction={'column'} >
+  <Container height="100vh" direction={'column'} mb={10} >
     <Hero subwidth={'100%'} />
     <Show breakpoint="(max-height:400px)">
       <Box height={"10vh"} width={'100vw'} mt={50}>
