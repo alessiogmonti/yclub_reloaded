@@ -81,7 +81,7 @@ const MenuLinks = () => {
   const [active, setActive] = useState(2)
   const toggle = (id) => setActive(id)
   return (
-  <Box zIndex={6}>
+  <Box zIndex={6} height={'100%'} maxH={'100vh'}>
     <Heading variant="Landing" textAlign={'center'}>
       <Link as={RLink} to={"/"}>
         HOME 

@@ -68,7 +68,7 @@ export const Card = (props) => (
                                 <Badge> {props.access} </Badge>
                                 </Text>
                                 <Spacer />
-                                <Heading pl={1} color='accent' fontSize={'24px'}>
+                                <Heading pl={1} color='accent' fontSize={'20px'}>
                                    {props.time}
                                 </Heading>
                             </HStack>
