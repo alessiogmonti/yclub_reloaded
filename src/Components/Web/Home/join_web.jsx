@@ -1,4 +1,4 @@
-import { HStack, VStack, Heading, Text, Divider, Box, Spacer } from "@chakra-ui/react";
+import { HStack, VStack, Heading, Text, Divider, Box, Spacer, Flex } from "@chakra-ui/react";
 import { Container } from "../../../Components/Global/Container";
 import { Yacht } from "../../../Assets/yacht";
 import FormManager from "../../../Utils/form";
@@ -41,7 +41,7 @@ export const WebJoin = () => (
                 </Box>
                 <Box display={'flex'} justifyContent={'flex-end'}>
                     <Box position={'absolute'} left={"-150px"}>
-                        <Yacht/>
+                            <Yacht/>
                         <Box position={'absolute'} left={"150px"} bottom={0} bg={'whiteAlpha.400'} height={'20px'} width={'100vw'}>
                             <Flex>
                                 <Text ml={1} pl={1}> YCLUB &copy; 2022</Text>
