@@ -1,0 +1,25 @@
+.MobileApp{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
+
+.MobileRow{
+    position: relative;
+  }
+  
+.MobileContainer{
+  position: absolute;
+  width: 90vw;
+  height: 80vh;
+  overflow: hidden;
+  background: transparent;
+  border: '1px solid white';
+  top: -35vh;
+}

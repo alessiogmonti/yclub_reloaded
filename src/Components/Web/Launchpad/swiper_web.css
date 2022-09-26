@@ -1,0 +1,27 @@
+.App{
+    width: 100vh;
+    height: 100vh;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    left: 0%;
+  }  
+
+.row{
+    position: relative;
+  }
+  
+  .container{
+    position: absolute;
+    width: 50vw;
+    height: 90vh;
+    overflow: hidden;
+    background: transparent;
+    border: '1px solid white';
+    top:5vh;
+  }
