@@ -27,7 +27,7 @@ const mainmenu = [
         'field': 'marketplace', 'active':false, 'link': '/'
       },
       {
-        'field': 'launchpad', 'active':false, 'link': '/launchpad'
+        'field': 'launchpad', 'active':true, 'link': '/launchpad'
       },
       {
         'field': 'store', 'active':false, 'link': '/'
@@ -37,13 +37,13 @@ const mainmenu = [
   {'field': 'about', 'active':true, 
     'sublinks': [
       {
-        'field': 'roadmap', 'active':false, 'link': '/roadmap'
+        'field': 'roadmap', 'active':true, 'link': '/roadmap'
       },
       {
-        'field': 'whitepaper', 'active':false, 'link': '/'
+        'field': 'whitepaper', 'active':true, 'link': '/', 'external': 'https://docs.yclub.io/overview/yclub'
       },
       {
-        'field': 'team', 'active':false, 'link': '/team'
+        'field': 'team', 'active':true, 'link': '/team'
       }
     ]
   }
@@ -96,12 +96,19 @@ const MenuLinks = () => {
       <Divider width={'60%'}/> 
       <VStack mt={10} spacing={'20%'} align={'center'}>     
         { mainmenu[active].sublinks.map( (d) =>
-              // <NextLink href={d.link} passHref>
-                <Link as={RLink} to={d.link} >
-                  <Heading variant="SubMenu" textAlign={'center'} >
+              d.external ? (
+                <Link isExternal href={d.external} >
+                  <Heading variant="SubMenu" textAlign={'center'} color={d.active? 'white' : useColorModeValue('rgba(240,240,240,0.9)','rgba(155,155,155,1)') }>
                     {d.field}
                   </Heading>
                 </Link>
+              ) : (
+                <Link as={RLink} to={d.link} >
+                  <Heading variant="SubMenu" textAlign={'center'} color={d.active? 'white' : useColorModeValue('rgba(240,240,240,0.9)','rgba(155,155,155,1)') }>
+                    {d.field}
+                  </Heading>
+                </Link>
+              )
               )
             }
       </VStack>
