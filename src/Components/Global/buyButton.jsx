@@ -2,7 +2,7 @@ import { Box, Text, Link, Flex, Spacer, IconButton, useDisclosure, Show, Hide } 
 import { AiFillCloseCircle } from 'react-icons/ai'
 
 export const BuyButton = (props) => (
-    <Box maxWidth={['100vw','400px']} minWidth='max-content' layerStyle={'button'} position="relative" maxHeight={'max-content'} ml={[null,null,null,null,null]}>
+    <Box maxWidth={['100vw','400px']} minWidth='max-content' layerStyle={'button'} position="relative" maxHeight={'max-content'} margin={'auto'}>
         <Flex minWidth='max-content' justifyContent={'center'} verticalAlign={'center'} alignItems='center' gap='0' direction={props.direction} >
         {props.available ? (
             <Link href={props.link} passHref>

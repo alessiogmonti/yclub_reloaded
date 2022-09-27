@@ -11,7 +11,7 @@ const WebLaunchpad = (props) => {
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
         <Box layerStyle={'background'} sx={{filter:'blur(38px)'}}/>
         <DarkModeSwitch />
-        <Box position={'absolute'} width={'60vw'} left={'50vw'}>
+        <Box position={'absolute'} width={'60vw'} left={'55vw'}>
             <Box display={'flex'} width={'100%'} height={'100vh'} overflowX={'hidden'} >
                 <WebSwiper data={props.data} />
             </Box>
