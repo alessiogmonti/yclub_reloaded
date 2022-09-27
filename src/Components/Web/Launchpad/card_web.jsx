@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 
 
 export const Card = (props) => {
+    const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
     return(
         <div className='card'>
             <Box height={'100%'} width={'100%'} verticalAlign={'top'} alignItems={'center'} maxWidth={['30vw','30vw','40vw','60vw']}  justifyContent={'center'}>
@@ -28,7 +29,8 @@ export const Card = (props) => {
                             position={'absolute'}
                             left={[null,null,null,"10%","13%","15%"]}
                             bg={useColorModeValue('rgba(255,255,255,0.5)', 'dark')} 
-                            borderColor={[null,null,null,'accent','accent','accent']} borderWidth={'1px'} width={[null,null,null,"70%","68%","60%"]}
+                            borderColor={[null,null,null,'accent','accent','accent']} borderWidth={'1px'} 
+                            width={[null,null,null,"60%","60%","60%"]}
                             top={'7%'}
                             height={[null,null,"10%","50%","75%","73%"]}
                             borderRadius={'60px'} >
@@ -76,8 +78,12 @@ export const Card = (props) => {
                         </Box>
                     </Flex>
                     <Box position={'absolute'} height={'100vh'} top={10}>
-                        <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={10} boxSize={[null,null,null,"55%","60%","65%"]} objectFit={'cover'} />
-                        <Flex position={'relative'} bottom={[null,null,null,"10%","9%","10vh"]} width={'10%'} ml={[null,null,null,"22px","40px",20]} gap={4} zIndex={3}>
+                        {isSafari ? (
+                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={10} display={'block'} height={[null,null,null,'55%','60%','65%']} width={'auto%'} objectFit={'cover'}/>
+                        ) : (
+                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={10} boxSize={[null,null,null,"55%","60%","65%"]} objectFit={'cover'} display={'block'} />
+                            )}
+                        <Flex position={'relative'} bottom={[null,null,null,"15%","9%","10vh"]} width={'10%'} ml={[null,null,null,"60px","40px",20]} gap={[null,null,null,2,3,4]} zIndex={3} direction={[null,null,null,'column','row','row']}>
                             <BuyButton
                                 available
                                 regular_text={'connect wallet'}
