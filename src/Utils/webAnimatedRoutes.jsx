@@ -1,11 +1,12 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
-import Home from '../Pages/Web/home_web'
-import WebRoadmap from '../Pages/Web/roadmap_web'
-import WebTeam from '../Pages/Web/team_web'
-import WebLaunchpad from '../Pages/Web/launchpad_web'
+import Home from '../Pages/Web/home'
+import WebRoadmap from '../Pages/Web/webRoadmap'
+import WebTeam from '../Pages/Web/webTeam'
+import WebLaunchpad from '../Pages/Web/webLaunchpad'
 
+import ContractsData from '../Data/contractsData'
 
 export function WebAnimatedRoutes(){
     const location = useLocation()
@@ -16,7 +17,7 @@ export function WebAnimatedRoutes(){
               <Route index element={<Home />} />
               <Route path="roadmap" element={<WebRoadmap />} />
               <Route path="team" element={<WebTeam />} />
-              <Route path="launchpad" element={<WebLaunchpad />} />
+              <Route path="launchpad" element={<WebLaunchpad data={ContractsData}/>} />
                {/* <Route path="*" element={<NoPage />} */}
             </Route>
           </Routes>

@@ -1,6 +1,6 @@
-import { WebLanding } from "../../Components/Web/Home/landing_web"
-import WebTokenomics from "../../Components/Web/Home/tokenomics_web"
-import { WebJoin } from "../../Components/Web/Home/join_web"
+import { WebLanding } from "../../Components/Web/Home/webLanding"
+import WebTokenomics from "../../Components/Web/Home/webTokenomics"
+import { WebJoin } from "../../Components/Web/Home/webJoin"
 import Video from "../../Components/Global/crowdfund"
 
 import { Box, Show } from "@chakra-ui/react"

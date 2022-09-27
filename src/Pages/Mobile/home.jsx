@@ -1,9 +1,9 @@
 import { DarkModeSwitch } from "../../Components/Global/DarkModeSwitch"
 import { Menu } from "../../Components/Mobile/Menus/MainMenu"
-import { MobileLanding } from "../../Components/Mobile/Home/landing_mobile"
+import { MobileLanding } from "../../Components/Mobile/Home/mobileLanding"
 import Video from "../../Components/Global/crowdfund"
-import { MobileTokenomics } from "../../Components/Mobile/Home/tokenomics_mobile"
-import { MobileJoin } from "../../Components/Mobile/Home/join_mobile"
+import { MobileTokenomics } from "../../Components/Mobile/Home/mobileTokenomics"
+import { MobileJoin } from "../../Components/Mobile/Home/mobileJoin"
 
 import { Box, Show } from "@chakra-ui/react"
 

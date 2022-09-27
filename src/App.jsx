@@ -1,8 +1,8 @@
 import { Show, Box } from "@chakra-ui/react"
 import { BrowserRouter } from "react-router-dom"
 
-import { WebAnimatedRoutes } from "./Utils/animatedRoutes_web"
-import { MobileAnimatedRoutes } from "./Utils/animatedRoutes_mobile"
+import { WebAnimatedRoutes } from "./Utils/webAnimatedRoutes"
+import { MobileAnimatedRoutes } from "./Utils/mobileAnimatedRoutes"
 import { LandingLogo } from "./Components/Web/nav_web"
 
 const App = () => (

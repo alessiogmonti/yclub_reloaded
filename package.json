@@ -11,10 +11,12 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.0.10",
     "@chakra-ui/react": "^2.3.4",
+    "@crossmint/client-sdk-react-ui": "^0.2.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@fontsource/space-grotesk": "^4.5.10",
     "@popmotion/popcorn": "^0.4.4",
+    "ethers": "^5.7.1",
     "formik": "^2.2.9",
     "framer-motion": "^7.3.5",
     "popmotion": "^11.0.5",

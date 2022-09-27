@@ -25,11 +25,11 @@ export const MobileJoin = () => (
 const Socials = () => (
     <Box height={"25%"} width={'60%'}
         bg={'light'} _dark={{bg:'dark', borderColor:'accent'}} borderColor={'white'} borderWidth={'1px'} rounded={'50px'}>
-        <SimpleGrid columns={2} spacingX={1} width={'100%'} height={'100%'}>
+        <SimpleGrid columns={2} spacingX={1} width={'100%'} height={'100%'} ml={5}>
         {socialLinks.map(
                 (d, idx) => 
                 <Link isExternal href={d.link}>
-                    <IconButton variant={'ghost'} color={'accent'} isRound size={'xl'} fontSize={'70px'} aria-label={'medium'}icon={d.icon} />
+                    <IconButton variant={'ghost'} color={'accent'} isRound size={'xl'} p={1} fontSize={'70px'} aria-label={'medium'}icon={d.icon} />
                 </Link>
                 )
             }
