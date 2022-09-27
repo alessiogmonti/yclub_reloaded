@@ -81,7 +81,7 @@ export const Card = (props) => {
                         {isSafari ? (
                             <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={10} display={'block'} height={[null,null,null,'55%','60%','65%']} width={'auto%'} objectFit={'cover'}/>
                         ) : (
-                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={10} boxSize={[null,null,null,"55%","60%","65%"]} objectFit={'cover'} display={'block'} />
+                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"5%","7%","10%"]} boxSize={[null,null,null,"55%","60%","65%"]} objectFit={'cover'} display={'block'} />
                             )}
                         <Flex position={'relative'} bottom={[null,null,null,"15%","9%","10vh"]} width={'10%'} ml={[null,null,null,"60px","40px",20]} gap={[null,null,null,2,3,4]} zIndex={3} direction={[null,null,null,'column','row','row']}>
                             <BuyButton
