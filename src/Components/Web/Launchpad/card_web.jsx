@@ -23,7 +23,7 @@ export const Card = (props) => {
             </Flex>
                 <Box>
                     <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={10} width={'65%'} />
-                    <Flex position={'absolute'} bottom={[null,null,null,"10%","30%","20%"]} width={'10%'} ml={[null,null,null,10,"28px",20]} gap={4} zIndex={3}>
+                    <Flex position={'absolute'} bottom={[null,null,null,"10%","30%","20%"]} width={'10%'} ml={[null,null,null,"22px","28px",20]} gap={4} zIndex={3}>
                         <BuyButton
                             height={'100%'}
                             available
