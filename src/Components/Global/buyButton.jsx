@@ -7,7 +7,7 @@ export const BuyButton = (props) => (
         {props.available ? (
             <Link href={props.link} passHref>
                 <IconButton icon={props.icon} variant={'ghost'}
-                    rounded={'full'} size={[null,null,null,'md','md','xl']} my={0} mx={2}
+                    rounded={'full'} size={[null,null,null,'sm','md','xl']} my={[null,null,null,2,1,0]} mx={2}
                     />
             </Link>
                 ) : (
@@ -19,10 +19,10 @@ export const BuyButton = (props) => (
                         color:'accent',
                         bg:'blackAlpha.800'
                     }}
-                    rounded={'full'} size={[null,null,null,'md','lg','xl']}
+                    rounded={'full'} size={[null,null,null,'sm','md','xl']}
                     />
                 )}
-            <Text variant={'buy-link'} pl={3} fontSize={[null,null,null,'20px','22px','25px']} lineHeight={[null,null,null,'20px','22px','27px']}>
+            <Text width={[null,null,null,'50%','55%','90%']} variant={'buy-link'} pl={3} fontSize={[null,null,null,'20px','22px','25px']} lineHeight={[null,null,null,'25px','25px','27px']}>
                 {props.regular_text}
             </Text>
         </Flex>

@@ -27,14 +27,14 @@ export const Card = (props) => {
                         <Box
                             className='background'
                             position={'absolute'}
-                            left={[null,null,null,"10%","13%","15%"]}
+                            left={[null,null,null,"5%","13%","15%"]}
                             bg={useColorModeValue('rgba(255,255,255,0.5)', 'dark')} 
                             borderColor={[null,null,null,'accent','accent','accent']} borderWidth={'1px'} 
                             width={[null,null,null,"60%","60%","60%"]}
                             top={'7%'}
-                            height={[null,null,"10%","50%","75%","73%"]}
+                            height={[null,null,"10%","50%","65%","68%"]}
                             borderRadius={'60px'} >
-                                <Box position={'relative'} left={'55%'} height={'100%'} top={'45%'} width={'80%'} alignItems={'flex-start'} justifyContent={'flex-start'} transform={'rotate(90deg)'} transformOrigin={'top'}>
+                                <Box position={'relative'} left={[null,null,null,'-50%','55%','55%']} height={'100%'} top={'45%'} width={'80%'} alignItems={'flex-start'} justifyContent={'flex-start'} transform={'rotate(90deg)'} transformOrigin={'top'}>
                                     {props.active? (<>  
                                                 <HStack>
                                                     <Text> {props.stock}% </Text> 
@@ -79,9 +79,9 @@ export const Card = (props) => {
                     </Flex>
                     <Box position={'absolute'} height={'100vh'} top={10}>
                         {isSafari ? (
-                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={10} display={'block'} height={[null,null,null,'55%','60%','65%']} width={'auto%'} objectFit={'cover'}/>
+                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={10} display={'block'} height={[null,null,null,'55%','55%','65%']} width={'auto%'} objectFit={'cover'}/>
                         ) : (
-                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"5%","7%","10%"]} boxSize={[null,null,null,"55%","60%","65%"]} objectFit={'cover'} display={'block'} />
+                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"15%","7%","10%"]} boxSize={[null,null,null,"55%","62%","65%"]} objectFit={'cover'} display={'block'} />
                             )}
                         <Flex position={'relative'} bottom={[null,null,null,"15%","9%","10vh"]} width={'10%'} ml={[null,null,null,"60px","40px",20]} gap={[null,null,null,2,3,4]} zIndex={3} direction={[null,null,null,'column','row','row']}>
                             <BuyButton
