@@ -4,6 +4,7 @@ import { Swiper } from "../../Components/Mobile/Launchpad/swiper_mobile"
 
 import { Box, Center, Heading,} from "@chakra-ui/react"
 import { motion } from "framer-motion"
+import { MobileFooter } from "../../Components/Mobile/Home/mobileFooter"
 
 const MobileLaunchpad = (props) => (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
@@ -17,6 +18,7 @@ const MobileLaunchpad = (props) => (
         <Box width={'100vw'} height={'100vh'} >
             <Swiper data={props.data} />
         </Box>
+        <MobileFooter/>
     </motion.div>
 )
 

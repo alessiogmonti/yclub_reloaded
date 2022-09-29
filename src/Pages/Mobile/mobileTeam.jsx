@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Box, Heading, Center } from "@chakra-ui/react"
 import { Scroller } from "../../Components/Mobile/scroller_mobile"
 import { DataContainer } from "../../Components/Mobile/Team/dataContainer_mobile"
+import { MobileFooter } from "../../Components/Mobile/Home/mobileFooter"
 
 const items = [
     {title: 'The Yacht Mogul', date:'Advisor', content:<DataContainer bio={"All passion and love for yachts and their ability to inspire people all around the world. A chosen “Influencial figure in the yachting world” by some of the press such as Forbes,CNN,BOAT,Robb Report."} fullName={"Denis Suka"} profileImg={'/Team/Profile/denis.png'} companyImg={['/Team/companies/MY.png']}/>},
@@ -39,6 +40,7 @@ const MobileTeam = () => (
         <Box width={'99vw'} height={'90vh'}>
             <Scroller data={items}/>
         </Box>
+        <MobileFooter />
         <CTA />
     </motion.div>
 )

@@ -6,6 +6,7 @@ import { DataContainer } from "../../Components/Mobile/Roadmap/dataContainer_mob
 
 import { motion } from "framer-motion"
 import { Box, Heading, Center} from "@chakra-ui/react"
+import { MobileFooter } from "../../Components/Mobile/Home/mobileFooter"
 
 const data = [
     { title : 'Drakar', date: 'Q1 2022', content: <DataContainer hasPassed data={ ['Research & Development', 'Concept Development'] } />},
@@ -29,6 +30,7 @@ const MobileRoadmap = () => (
         <Box width={'100vw'} height={'100vh'} >
             <Scroller data={data} component={<DataContainer />}/>
         </Box>
+        <MobileFooter />
         <CTA />
     </motion.div>
 )
