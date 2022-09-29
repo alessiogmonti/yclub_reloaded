@@ -12,6 +12,7 @@ export const Card = (props) => {
     const [account, setAccount] = useState(null)
 
     const currentDate = Math.floor(new Date()/1000)
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setTime(SecondsToTime( props.end - currentDate ));
@@ -85,12 +86,12 @@ export const Card = (props) => {
                                 </Box>
                         </Box>
                     </Flex>
-                    <Box position={'absolute'} height={'100vh'} top={10}>
-                        <Box className={'ImgContainer'} height={'100%'} width={'135%'} top={10}>
+                    <Box position={'absolute'} height={'100vh'} width={'auto'} top={10}>
+                        <Box className={'ImgContainer'} height={'100%'} width={'auto'} top={10}>
                             {isSafari ? (
                                 <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={'8%'} display={'block'} width={[null,null,null,'40%','45%','50%']} height={'auto'}/>
                             ) : (
-                                <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"15%","7%","10%"]} boxSize={[null,null,null,"55%","60%","65%"]} objectFit={'fill'} display={'block'} />
+                                <Image mt={5} className={'image'} src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"15%","7%","8%"]} boxSize={[null,null,null,"400px","500px","600px"]} objectFit={'cover'} display={'block'} />
                                 )}
                             <Flex position={'relative'} bottom={[null,null,null,'10%','10%','10%']} width={'10%'} 
                                 ml={[null,null,null,"60px","40px","100px"]} gap={[null,null,null,2,3,4]} zIndex={3} direction={[null,null,null,'row','row','row']}>

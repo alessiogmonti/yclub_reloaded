@@ -11,7 +11,7 @@ import Round from '../../../abi/Round'
 import RoundWithSigner from '../../../abi/RoundWithSigner'
 
 function WebSwiper(props) {
-  const [position, positionSet] = useState(1)
+  const [position, positionSet] = useState(0)
   const handlers = useSwipeable({ 
       onSwipedLeft: () => position < props.data.length-1 ? positionSet(position+1) : null,
       onSwipedRight: () => position > 0 ? positionSet(position-1) : null });
@@ -33,14 +33,14 @@ function WebSwiper(props) {
           try {
             const supply = (await round.roundTotalSupply()).toNumber() 
             setSupply(supply)
+            d['stock'] = supply
           } catch (error){
             console.log(error);
           } finally {
             setLoading(false);
           }
         })()
-        supply === 0 ? d['stock'] = undefined : d['stock'] = supply
-        d['stock_pct'] = ( d.stock/ d.stock_amt) * 100
+        d['stock_pct'] = ( d['stock'] / d.stock_amt) * 100
         d['loading'] = loading
       }
     })
@@ -56,7 +56,7 @@ function WebSwiper(props) {
                       left: `${(index - position) * 45 - 20}vw`}}
                   transition={{type:'spring', stiffness:260, damping:20}}
               >
-                  <Card {...d}  />
+                  <Card {...d} />
               </motion.div>
           ))}
         </div>
