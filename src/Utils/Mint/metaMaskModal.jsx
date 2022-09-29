@@ -21,6 +21,8 @@ import { BuyButton } from "../../Components/Global/buyButton"
 import { Ethereum } from "../../Assets/Launchpad/ethereum"
 import connectMetamask from "./Metamask/connectMetamaskUtil"
 import ContractData from "../../Data/contractsData"
+import Round from "../../abi/Round"
+import RoundWithSigner from "../../abi/RoundWithSigner"
 
 export const MetaMaskBuy = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -70,7 +72,7 @@ export const MetaMaskBuy = (props) => {
             regular_text={'connect wallet'}
             direction={'row-reverse'}
             position={'relative'}
-            icon={<Ethereum fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}/>}
+            icon={<Ethereum fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')} />}
             />
           <Modal isOpen={isOpen} onClose={onClose} motionPreset={'slideInBottom'}>
             <ModalOverlay bg={'whiteAlpha.100'} backdropFilter={'blur(10px) hue-rotate(3.3deg)'}/>
@@ -101,7 +103,7 @@ export const MetaMaskBuy = (props) => {
                             <IconButton size={'lg'} disabled={mintAmount >= mintMax} onClick={() => setMintAmount(mintAmount+1)} icon={<AiFillPlusCircle />} />
                         </ButtonGroup>
                         <Spacer />
-                        <ButtonGroup size={'xl'} isAttached onClick={() => handleMintClick()}>
+                        <ButtonGroup size={'xl'} isAttached onClick={() => handleMintClick(setLoading)}>
                     <Button px={2} bg={'whiteAlpha.800'} color={'dark'}
                     borderColor={'accent'} borderWidth={'1px'}
                     borderLeftRadius={'100px'}
@@ -118,7 +120,7 @@ export const MetaMaskBuy = (props) => {
                     <IconButton 
                     borderColor={'accent'} borderWidth={'1px'}
                     icon={<AiFillCheckCircle />} variant={'ghost'}
-                    fontSize={[null,null,null,'33px','30px','45px']}
+                    fontSize={['33px',null,null,'33px','30px','45px']}
                     bg={'whiteAlpha.800'}
                     color={'dark'}
                     _dark = {{
@@ -128,7 +130,7 @@ export const MetaMaskBuy = (props) => {
                           color: 'light'
                         }
                     }}
-                    rounded={'full'} size={[null,null,null,'sm','md','xl']}
+                    rounded={'full'} size={['xl',null,null,'xl','xl','xl']}
                     />
                   </ButtonGroup>
                     </> :
@@ -136,14 +138,14 @@ export const MetaMaskBuy = (props) => {
                   <IconButton 
                     onClick={onClose}
                     icon={<AiFillCloseCircle />} variant={'ghost'}
-                    fontSize={[null,null,null,'33px','30px','45px']}
+                    fontSize={['33px',null,null,'33px','30px','45px']}
                     bg={'whiteAlpha.800'}
                     color={'dark'}
                     _dark = {{
                         color:'accent',
                         bg:'blackAlpha.800'
                     }}
-                    rounded={'full'} size={[null,null,null,'sm','md','xl']}
+                    rounded={'full'} size={['xl',null,null,'sm','md','xl']}
                     />
                     <Spacer/>
                     <ButtonGroup size={'xl'} isAttached onClick={() => connectMetamask(setAlert, props.setAccount)}>
@@ -163,7 +165,7 @@ export const MetaMaskBuy = (props) => {
                     <IconButton 
                     borderColor={'accent'} borderWidth={'1px'}
                     icon={<AiFillCheckCircle />} variant={'ghost'}
-                    fontSize={[null,null,null,'33px','30px','45px']}
+                    fontSize={['45px',null,null,'33px','30px','45px']}
                     bg={'whiteAlpha.800'}
                     color={'dark'}
                     _dark = {{
@@ -173,7 +175,7 @@ export const MetaMaskBuy = (props) => {
                           color: 'light'
                         }
                     }}
-                    rounded={'full'} size={[null,null,null,'sm','md','xl']}
+                    rounded={'full'} size={['xl',null,null,'xl','xl','xl']}
                     />
                   </ButtonGroup>
                   </>
@@ -185,7 +187,7 @@ export const MetaMaskBuy = (props) => {
       )
 }
 
-const handleMintClick = async () => {
+const handleMintClick = async (setLoading) => {
     setLoading(true);
     try {
       const roundWithSigner = RoundWithSigner(props.address);

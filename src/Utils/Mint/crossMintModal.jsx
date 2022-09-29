@@ -57,24 +57,24 @@ export const CrossMintBuy = (props) => {
                 {crossMint ? null : <IconButton 
                     onClick={onClose}
                     icon={<AiFillCloseCircle />} variant={'ghost'}
-                    fontSize={[null,null,null,'33px','30px','45px']}
+                    fontSize={['45px',null,null,'33px','30px','45px']}
                     bg={'whiteAlpha.800'}
                     color={'dark'}
                     _dark = {{
                         color:'accent',
                         bg:'blackAlpha.800'
                     }}
-                    rounded={'full'} size={[null,null,null,'sm','md','xl']}
+                    rounded={'full'} size={['xl',null,null,'lg','lg','xl']}
                 />}
                     <Spacer/>
                     {crossMint? (
                         <>
                         <ButtonGroup isAttached>
-                            <IconButton size={'lg'} onClick={() => setMintAmount(mintAmount-1)} icon={<AiFillMinusCircle />} />
-                            <Button size={'lg'}>{mintAmount}</Button>
-                            <IconButton size={'lg'} disabled={mintAmount >= mintMax} onClick={() => setMintAmount(mintAmount+1)} icon={<AiFillPlusCircle />} />
+                            <IconButton size={['lg','xl',null,null,'lg']} onClick={() => setMintAmount(mintAmount-1)} icon={<AiFillMinusCircle />} />
+                            <Button size={['lg','xl',null,null,'lg']}>{mintAmount}</Button>
+                            <IconButton size={['lg','xl',null,null,'lg']} disabled={mintAmount >= mintMax} onClick={() => setMintAmount(mintAmount+1)} icon={<AiFillPlusCircle />} />
                         </ButtonGroup>
-                        <Spacer />
+                        <Spacer px={2}/>
                         <Proceed mintAmount={mintAmount} />
                         </>
                     )
@@ -96,7 +96,7 @@ export const CrossMintBuy = (props) => {
                     borderColor={'accent'} borderWidth={'1px'}
                     onClick={() => <Proceed/>}
                     icon={<AiFillCheckCircle />} variant={'ghost'}
-                    fontSize={[null,null,null,'33px','30px','45px']}
+                    fontSize={['45px',null,null,'33px','30px','45px']}
                     bg={'whiteAlpha.800'}
                     color={'dark'}
                     _dark = {{
@@ -106,7 +106,7 @@ export const CrossMintBuy = (props) => {
                             color: 'light'
                         }
                     }}
-                    rounded={'full'} size={[null,null,null,'sm','md','xl']}
+                    rounded={'full'} size={['xl',null,null,'sm','md','xl']}
                     />
                     </ButtonGroup>))
                     }

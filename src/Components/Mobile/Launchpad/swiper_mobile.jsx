@@ -1,17 +1,48 @@
 import "./swiper_mobile.css"
 import { Card } from "./card_mobile"
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {useSwipeable } from "react-swipeable"
 import { Box,  Flex, Circle, Spacer} from "@chakra-ui/react"
+
+import Round from '../../../abi/Round'
 
 export function Swiper(props) {
   const [position, positionSet] = useState(2)
   const handlers = useSwipeable({ 
       onSwipedLeft: () => position < props.data.length-1 ? positionSet(position+1) : null,
       onSwipedRight: () => position > 0 ? positionSet(position-1) : null })
+  
+  const currentDate = Math.floor(new Date() /1000)
+  const [supply, setSupply] = useState(0)
+  const [loading, setLoading] = useState(true)
 
+  useEffect( ()=> {
+    props.data.map( (d) => {
+      currentDate < d.start ? (
+        d['status'] = 'COMING SOON'
+      ) : ( currentDate > d.end ? d['status'] = 'SOLD OUT' : null )
+      
+      if (currentDate > d.start && currentDate < d.end){
+        d['countdown'] = true; 
+        const round = Round(d.address);
+        (async () => {
+          try {
+            const supply = (await round.roundTotalSupply()).toNumber() 
+            setSupply(supply)
+            d['stock'] = supply
+          } catch (error){
+            console.log(error);
+          } finally {
+            setLoading(false);
+          }
+        })()
+        d['stock_pct'] = ( d['stock'] / d.stock_amt) * 100
+        d['loading'] = loading
+      }
+    })
+  }, [loading, supply])
   return (
     <div {...handlers} className="MobileApp">
       <div className="MobileRow">

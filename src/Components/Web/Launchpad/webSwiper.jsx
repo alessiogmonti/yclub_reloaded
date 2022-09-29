@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Box,  Flex, Circle, Spacer, Heading, VStack} from "@chakra-ui/react"
-import { ethers } from "ethers"
 
 import { useSwipeable } from "react-swipeable"
 import { Card } from "./card_web"
 
-import SecondsToTime from '../../../Utils/Mint/secondsToTime';
 import Round from '../../../abi/Round'
-import RoundWithSigner from '../../../abi/RoundWithSigner'
 
 function WebSwiper(props) {
   const [position, positionSet] = useState(0)

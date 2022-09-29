@@ -12,7 +12,7 @@ const MobileLaunchpad = (props) => (
         <DarkModeSwitch />
         <Center width={'100vw'} position={'absolute'} alignItems={'center'} justifyContent={'center'}>
             <Heading variant={'Menu'} position={'relative'} top={14}
-            fontSize={'35px'} letterSpacing={'3px'} fontWeight={700} color={'light'} >LANA SUPERYACHT</Heading>
+            fontSize={'35px'} letterSpacing={'3px'} fontWeight={700} color={'light'}>LANA SUPERYACHT</Heading>
         </Center>
         <Box width={'100vw'} height={'100vh'} >
             <Swiper data={props.data} />

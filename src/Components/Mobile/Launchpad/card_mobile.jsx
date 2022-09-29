@@ -1,16 +1,26 @@
 import { Image, Box, Flex, Spacer, useColorModeValue, 
         Heading, Progress, HStack, Text, 
         Badge } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 
-import { BuyButton } from "../../Global/buyButton";
-import { Ethereum } from "../../../Assets/Launchpad/ethereum"
-import { Dollar } from "../../../Assets/Launchpad/dollar"
 import lanaImg from '../../../Assets/Launchpad/yachts_animation.gif'
+import { MetaMaskBuy } from '../../../Utils/Mint/metaMaskModal'
+import { CrossMintBuy } from '../../../Utils/Mint/crossMintModal';
+import SecondsToTime from '../../../Utils/Mint/secondsToTime'
 
-import { AiFillCloseCircle } from 'react-icons/ai';
+export const Card = (props) => {
+    const [time, setTime] = useState(0)
+    const [account, setAccount] = useState(null)
 
+    const currentDate = Math.floor(new Date()/1000)
 
-export const Card = (props) => (
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setTime(SecondsToTime( props.end - currentDate ));
+        }, 1000);
+        return () => clearTimeout(timer);
+    })
+    return (
     <>
         <Flex position={'absolute'} top={0} width={'100%'} px={1} gap={1}>
             <Box layerStyle={'button'} height={'100%'} px={3} >
@@ -39,14 +49,14 @@ export const Card = (props) => (
                             {props.stock? (
                                 <>
                                     <Progress size={'xs'} 
-                                        value={props.stock} 
+                                        value={props.stock_pct} 
                                         bg={'light'} borderColor={'dark'} borderWidth={'0.5px'} 
                                         _dark={{ bg:'dark', borderColor:'light'}}
                                         colorScheme={'blue'} style={{zIndex:2}}/>
                                     <HStack>
-                                        <Text> {props.stock}% </Text> 
+                                        <Text> {props.stock_pct}% </Text> 
                                         <Spacer/>
-                                        <Text> {props.stock_num}/{props.stock_amt} </Text>
+                                        <Text> {props.stock}/{props.stock_amt} </Text>
                                     </HStack>
                                 </> ) : (
                                 <>
@@ -58,40 +68,33 @@ export const Card = (props) => (
                                     <HStack>
                                         {/* <Text> {props.stock}% </Text>  */}
                                         <Spacer/>
-                                        <Text> {props.stock_num}/{props.stock_amt} </Text>
+                                        <Text> {props.stock_amt}/{props.stock_amt} </Text>
                                     </HStack>
                                 </>
                                 )
                                 }
                             <HStack gap={1}>
                                 <Text fontSize={'15px'}>
-                                <Badge> {props.access} </Badge>
+                                <Badge> {props.rarity} </Badge>
                                 </Text>
                                 <Spacer />
                                 <Heading pl={1} color='accent' fontSize={'20px'}>
-                                   {props.time}
+                                   {props.countdown ? time : props.status}
                                 </Heading>
                             </HStack>
                         </Box>
                 </Box>
             </Flex>
         </Box>
-        <Flex position={'absolute'} bottom={0} width={'100%'} px={1} gap={4}>
-            <BuyButton
-                available
-                regular_text={'MINT'}
-                position={'relative'}
-                icon={props.active? <Ethereum
-                    fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
-                    /> : <AiFillCloseCircle fontSize={'55px'}/>} />
-            <Spacer/>
-            <BuyButton 
-                available
-                direction={'row-reverse'}
-                regular_text={'CARD'}
-                icon={props.active? <Dollar
-                    fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
-                    /> : <AiFillCloseCircle fontSize={'55px'}/>} />
+        <Flex position={'absolute'} left={-5} bottom={0} width={'100vw'} px={10} gap={2}>
+            {props.countdown? (
+               <Flex maxWidth={'100vh'} width={'100%'}>
+                    <MetaMaskBuy account={account} setAccount={setAccount} />
+                        <Spacer/>
+                    <CrossMintBuy max={props.max} contract={props.address} account={account}/> 
+                </Flex>  
+            ) : null}
         </Flex>
     </>
 )
+}
