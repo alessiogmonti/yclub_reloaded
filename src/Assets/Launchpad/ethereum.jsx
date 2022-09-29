@@ -1,5 +1,5 @@
 export const Ethereum = (props) => (
-    <svg width="55" height="55" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width={props.size? props.size: "55"} height={props.size? props.size: "55"} viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M32.2566 41.1055V27.2024L18.6768 33.151L32.2566 41.1055Z" fill={props.fill} fillOpacity="0.99"/>
         <path d="M32.2568 26.2465V9.92188L19.1145 32.0031L32.2568 26.2465Z" fill={props.fill} fillOpacity="0.99"/>
         <path d="M33.1321 9.91528V26.2467L46.459 32.0846L33.1321 9.91528Z" fill={props.fill} fillOpacity="0.99"/>

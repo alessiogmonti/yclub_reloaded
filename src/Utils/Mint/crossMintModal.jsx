@@ -38,7 +38,7 @@ export const CrossMintBuy = (props) => {
             available
             direction={'row-reverse'}
             regular_text={'credit card'}
-            icon={<Dollar fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')} />} 
+            icon={<Dollar fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')} size={props.iconSize} />} 
             /> 
             <Modal isOpen={isOpen} onClose={onClose} motionPreset={'slideInBottom'}>
             <ModalOverlay bg={'whiteAlpha.100'} backdropFilter={'blur(10px) hue-rotate(3.3deg)'}/>

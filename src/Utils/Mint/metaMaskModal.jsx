@@ -72,7 +72,7 @@ export const MetaMaskBuy = (props) => {
             regular_text={'connect wallet'}
             direction={'row-reverse'}
             position={'relative'}
-            icon={<Ethereum fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')} />}
+            icon={<Ethereum fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')} size={props.iconSize} />}
             />
           <Modal isOpen={isOpen} onClose={onClose} motionPreset={'slideInBottom'}>
             <ModalOverlay bg={'whiteAlpha.100'} backdropFilter={'blur(10px) hue-rotate(3.3deg)'}/>
