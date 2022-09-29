@@ -89,7 +89,7 @@ export const Card = (props) => {
                     <Box position={'absolute'} height={'100vh'} width={'auto'} top={10}>
                         <Box className={'ImgContainer'} height={'100%'} width={'auto'} top={10}>
                             {isSafari ? (
-                                <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={'8%'} display={'block'} width={[null,null,null,'40%','45%','50%']} height={'auto'}/>
+                                <Image mt={5} className={'image'} src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"15%","3%","5%"]} display={'block'} width={[null,null,null,'40%','45%','55%']} height={'auto'}/>
                             ) : (
                                 <Image mt={5} className={'image'} src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"15%","7%","8%"]} boxSize={[null,null,null,"400px","500px","600px"]} objectFit={'cover'} display={'block'} />
                                 )}
