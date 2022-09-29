@@ -4,6 +4,7 @@ import { Box } from "@chakra-ui/react"
 
 import "../../Components/Web/Launchpad/swiper_web.css"
 import WebSwiper from "../../Components/Web/Launchpad/webSwiper"
+import { WebFooter } from "../../Components/Web/Home/webFooter"
 
 const WebLaunchpad = (props) => {
     return(
@@ -15,6 +16,7 @@ const WebLaunchpad = (props) => {
                 <WebSwiper data={props.data} />
             </Box>
         </Box>
+        <WebFooter/>
     </motion.div>
 )}
 

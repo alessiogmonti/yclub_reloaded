@@ -4,6 +4,7 @@ import { Box } from "@chakra-ui/react"
 import { Scroller } from "../../Components/Web/scroller_web"
 import { DataContainer } from "../../Components/Web/Team/dataContainer_team"
 import { DarkModeSwitch } from "../../Components/Global/DarkModeSwitch"
+import { WebFooter } from "../../Components/Web/Home/webFooter"
 
 const modules = import.meta.glob('../assets/**/*.jpg')
 
@@ -44,6 +45,7 @@ const WebTeam = () => (
                 <Scroller data={items} width={'48vw'}/>
             </Box>
         </Box>
+        <WebFooter />
     </motion.div>
 )
 

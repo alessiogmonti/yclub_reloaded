@@ -3,6 +3,7 @@ import { Box, Heading, Center } from "@chakra-ui/react"
 import { Scroller } from "../../Components/Web/scroller_web"
 import { DarkModeSwitch } from "../../Components/Global/DarkModeSwitch"
 import { DataContainer } from "../../Components/Web/Roadmap/dataContainer_web"
+import { WebFooter } from "../../Components/Web/Home/webFooter"
 
 const data = [
     { title : 'Drakar', date: 'Q1 2022', content: <DataContainer hasPassed data={ ['Research & Development', 'Concept Development'] } />},
@@ -27,6 +28,7 @@ const WebRoadmap = () => (
                 <Scroller width={'35vw'} data={data} component={<DataContainer />}/>
             </Box>
         </Box>
+        <WebFooter />
     </motion.div>
 )
 
