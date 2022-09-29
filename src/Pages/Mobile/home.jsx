@@ -20,8 +20,8 @@ const Home = () => {
           <Box height={'50vh'} margin={'auto'} padding={10}/>
         </Show>
         <Video />
-        <Show breakpoint="(max-height:688px)">
-          <Box height={'30vh'} margin={'auto'} padding={10}/>
+        <Show breakpoint="(max-height:870px)">
+          <Box height={'20vh'} margin={'auto'} padding={10}/>
         </Show>
         <MobileTokenomics />
         <Show breakpoint="(max-height:688px)">
