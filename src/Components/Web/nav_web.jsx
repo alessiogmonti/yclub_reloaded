@@ -16,7 +16,7 @@ const links = [
     'sublinks': [
       { 'field': 'philosophy', 'active':false, 'available':false},
       { 'field': 'press', 'active':false, 'available':false},
-      { 'field': 'join us', 'active':false, 'available':false}
+      { 'field': 'join us', 'active':false, 'available':false, }
     ]
 }, 
   {'field': 'invest', 'active':false, 

@@ -4,6 +4,7 @@ import { MobileLanding } from "../../Components/Mobile/Home/mobileLanding"
 import Video from "../../Components/Global/crowdfund"
 import { MobileTokenomics } from "../../Components/Mobile/Home/mobileTokenomics"
 import { MobileJoin } from "../../Components/Mobile/Home/mobileJoin"
+import { MobileFooter } from "../../Components/Mobile/Home/mobileFooter"
 
 import { Box, Show } from "@chakra-ui/react"
 
@@ -30,6 +31,7 @@ const Home = () => {
         <Show breakpoint="(max-height:688px)">
           <Box height={'10vh'} margin={'auto'} padding={10}/>
         </Show>
+        <MobileFooter />
       </Show>
     </Box>
   )
