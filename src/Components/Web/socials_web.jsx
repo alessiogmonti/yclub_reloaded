@@ -12,7 +12,7 @@ export const Socials = () => (
         <Stack direction={'row'} spacing={3} verticalAlign={'center'} zIndex={5}>
             {socialLinks.map(
                 (d, idx) => 
-                <Link isExternal href={d.link}>
+                <Link isExternal key={idx} href={d.link}>
                     <IconButton key={idx} fontSize={'20px'} size={'sm'} variant={'ghost'} rounded={'full'} href={'#'} color={'#2491EB'} icon={d.icon} />
                 </Link>
                 )

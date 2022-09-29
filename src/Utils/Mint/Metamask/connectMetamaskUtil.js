@@ -1,4 +1,4 @@
-const connectMetamask = async (setAlert) => {
+const connectMetamask = async (setAlert, setCurrentAccount) => {
   try {
     const { ethereum } = window;
     if (!ethereum) {
@@ -11,16 +11,17 @@ const connectMetamask = async (setAlert) => {
       return;
     }
     const chainId = await ethereum.request({ method: "eth_chainId" });
-    if (chainId !== process.env.targetChainId) {
+    if (chainId !== import.meta.env.VITE_ETHERS_ChainId) {
       await ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: process.env.targetChainId }],
+        params: [{ chainId: import.meta.env.VITE_ETHERS_ChainId }],
       });
     }
     const accounts = await ethereum.request({
       method: "eth_requestAccounts",
     });
     setCurrentAccount(accounts[0]);
+    console.log(accounts[0])
   } catch (error) {
     console.error(error);
   }

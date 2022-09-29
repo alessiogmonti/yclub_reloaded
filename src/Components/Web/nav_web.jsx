@@ -51,8 +51,8 @@ export const LandingLogo = () => {
             <Socials />
           </HStack>
         </Box>
-        <Box py={'55px'} >
-          <Heading variant={"Landing"} color={'light'}> {useLocation().pathname.replace("/","")} </Heading>
+        <Box pl={'15px'} py={'29px'} >
+          <Heading variant={"Landing"} fontSize={'25px'} color={'light'}> {useLocation().pathname.replace("/","")} </Heading>
         </Box>
       </Box>
       <Box ml={"10%"} px={10} display={'flex'}>

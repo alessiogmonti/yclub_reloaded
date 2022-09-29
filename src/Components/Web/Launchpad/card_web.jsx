@@ -1,14 +1,24 @@
 import { Image, Box, Flex, Spacer, useColorModeValue, Heading, Progress, HStack, Text, Badge } from '@chakra-ui/react';
-import { BuyButton } from "../../Global/buyButton";
-import { Ethereum } from "../../../Assets/Launchpad/ethereum"
-import { Dollar } from "../../../Assets/Launchpad/dollar"
+import { useEffect, useState } from 'react';
+
 import lanaImg from '../../../Assets/Launchpad/yachts_animation.gif'
-import { AiFillCloseCircle } from 'react-icons/ai';
-import { useEffect } from 'react';
-import { CrossMintBuy, MetaMaskBuy } from '../../../Utils/Mint/buyModal';
+import { MetaMaskBuy } from '../../../Utils/Mint/metaMaskModal';
+import { CrossMintBuy } from '../../../Utils/Mint/crossMintModal';
+import SecondsToTime from '../../../Utils/Mint/secondsToTime';
 
 export const Card = (props) => {
     const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+    const [time, setTime] = useState(0)
+    const [account, setAccount] = useState(null)
+
+    const currentDate = Math.floor(new Date()/1000)
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setTime(SecondsToTime( props.end - currentDate ));
+        }, 1000);
+        return () => clearTimeout(timer);
+    })
+
     return(
         <div className='card'>
             <Box height={'100%'} width={'100%'} verticalAlign={'top'} alignItems={'center'} maxWidth={['30vw','30vw','40vw','60vw']}  justifyContent={'center'}>
@@ -31,8 +41,9 @@ export const Card = (props) => {
                             top={'7%'}
                             height={[null,null,"10%","50%","65%","68%"]}
                             borderRadius={'60px'} >
-                                <Box position={'relative'} left={[null,null,null,'55%','65%','65%']} height={'90%'} top={'45%'} width={'60%'} alignItems={'flex-start'} justifyContent={'flex-start'} transform={'rotate(90deg)'} transformOrigin={'top'}>
-                                    {props.stock? (<>  
+                                <Box position={'relative'} left={[null,null,null,'55%','65%','69%']} height={'90%'} top={'45%'} width={'60%'} alignItems={'flex-start'} justifyContent={'flex-start'} transform={'rotate(90deg)'} transformOrigin={'top'}>
+                                    {props.stock? (
+                                            <>  
                                                 <HStack>
                                                     <Text> {props.stock_pct}% </Text> 
                                                     <Spacer/>
@@ -68,7 +79,7 @@ export const Card = (props) => {
                                             </Text>
                                             <Spacer />
                                             <Heading pl={1} color='accent' fontSize={'44px'}>
-                                            {props.time}
+                                            {props.countdown? time : props.status}
                                             </Heading>
                                     </HStack>
                                 </Box>
@@ -84,11 +95,11 @@ export const Card = (props) => {
                             <Flex position={'relative'} bottom={[null,null,null,'10%','10%','10%']} width={'10%'} 
                                 ml={[null,null,null,"60px","40px","100px"]} gap={[null,null,null,2,3,4]} zIndex={3} direction={[null,null,null,'row','row','row']}>
 
-                                {props.active ? (
+                                {props.countdown ? (
                                     <>
-                                        <MetaMaskBuy/>
-                                        <Spacer/>
-                                        <CrossMintBuy /> 
+                                        <MetaMaskBuy account={account} setAccount={setAccount} />
+                                            <Spacer/>
+                                        <CrossMintBuy max={props.max} contract={props.address} account={account}/> 
                                     </> 
                                 ) : null}
                             </Flex> 

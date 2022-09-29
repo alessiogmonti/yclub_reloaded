@@ -16,25 +16,22 @@ function WebSwiper(props) {
       onSwipedLeft: () => position < props.data.length-1 ? positionSet(position+1) : null,
       onSwipedRight: () => position > 0 ? positionSet(position-1) : null });
 
-  const currentDate = Math.floor(+new Date() /1000)
-  const [time, setTime] = useState()
+  const currentDate = Math.floor(new Date() /1000)
   const [supply, setSupply] = useState(0)
   const [loading, setLoading] = useState(true)
+
   useEffect( ()=> {
     props.data.map( (d) => {
       currentDate < d.start ? (
-        d['time'] = 'COMING SOON'
-      ) : ( currentDate > d.end ? d['time'] = 'SOLD OUT' : null )
+        d['status'] = 'COMING SOON'
+      ) : ( currentDate > d.end ? d['status'] = 'SOLD OUT' : null )
       
       if (currentDate > d.start && currentDate < d.end){
-        setTime(SecondsToTime( d.end - currentDate ))
-        d['time'] = time 
-        
+        d['countdown'] = true; 
         const round = Round(d.address);
         (async () => {
           try {
-            const supply = (await round.roundTotalSupply()).toNumber() + d?.deltaSupply
-            console.log(supply)
+            const supply = (await round.roundTotalSupply()).toNumber() 
             setSupply(supply)
           } catch (error){
             console.log(error);
@@ -43,12 +40,11 @@ function WebSwiper(props) {
           }
         })()
         supply === 0 ? d['stock'] = undefined : d['stock'] = supply
-        d['stock_pct'] = ((props.stock_amt - props.stock)/ props.stock_amt) * 100
+        d['stock_pct'] = ( d.stock/ d.stock_amt) * 100
         d['loading'] = loading
       }
     })
-  }, [time, loading, supply])
-
+  }, [loading, supply])
   return (
     <div {...handlers} className="App">
           <div className="row">
@@ -69,9 +65,9 @@ function WebSwiper(props) {
               <Heading mr={5} variant={'special'} fontSize={'25px'} color={'light'}> view releases: </Heading>
               {[...Array(props.data.length)].map( (d, index) => (
                   <>
-                  { position==index ? <Circle size={8} bg={'light'} borderColor={'accent'} borderWidth={'1px'}/> :
-                  <Circle key={index} onClick={() => positionSet(index)} size={5} bg={'dark'} borderColor={'light'} borderWidth={'1px'}/> }
-                  <Spacer />
+                  { position==index ? <Circle key={index+'_circleActive'} size={8} bg={'light'} borderColor={'accent'} borderWidth={'1px'}/> :
+                  <Circle key={index+'_circle'} onClick={() => positionSet(index)} size={5} bg={'dark'} borderColor={'light'} borderWidth={'1px'}/> }
+                  <Spacer key={index+'_spacer'} />
                   </>
               ))}
               </Flex>

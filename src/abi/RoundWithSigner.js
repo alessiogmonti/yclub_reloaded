@@ -1,7 +1,5 @@
 import metamskProvider from "./metamskProvider";
-
 import Round from "./Round";
-
 let RoundWithSigner;
 
 if (metamskProvider) {
