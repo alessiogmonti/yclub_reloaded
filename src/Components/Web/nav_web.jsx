@@ -23,7 +23,7 @@ const links = [
     'sublinks': [
       { 'field': 'collection', 'active':false, 'available':false},
       { 'field': 'marketplace', 'active':false, 'available':false},
-      { 'field': 'launchpad', 'active':false, 'available':true},
+      { 'field': 'mint', 'active':false, 'available':true},
       { 'field': 'store', 'active':false, 'available':false}
     ]
 }, 

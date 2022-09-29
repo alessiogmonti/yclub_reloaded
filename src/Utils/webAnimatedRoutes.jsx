@@ -17,7 +17,7 @@ export function WebAnimatedRoutes(){
               <Route index element={<Home />} />
               <Route path="roadmap" element={<WebRoadmap />} />
               <Route path="team" element={<WebTeam />} />
-              <Route path="launchpad" element={<WebLaunchpad data={ContractsData}/>} />
+              <Route path="mint" element={<WebLaunchpad data={ContractsData}/>} />
                {/* <Route path="*" element={<NoPage />} */}
             </Route>
           </Routes>

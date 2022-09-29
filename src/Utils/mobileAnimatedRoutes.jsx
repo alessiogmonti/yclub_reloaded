@@ -17,7 +17,7 @@ export function MobileAnimatedRoutes(){
               <Route index element={<Home />} />
               <Route path="roadmap" element={<MobileRoadmap />} />
               <Route path="team" element={<MobileTeam />} />
-              <Route path="launchpad" element={<MobileLaunchpad data={ContractsData}/>} />
+              <Route path="mint" element={<MobileLaunchpad data={ContractsData}/>} />
                {/* <Route path="*" element={<NoPage />} */}
             </Route>
           </Routes>
