@@ -94,7 +94,7 @@ export const Card = (props) => {
                                 <Image mt={5} className={'image'} src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"15%","7%","8%"]} boxSize={[null,null,null,"400px","500px","600px"]} objectFit={'cover'} display={'block'} />
                                 )}
                             <Flex position={'relative'} bottom={[null,null,null,'10%','10%','10%']} width={'10%'} 
-                                ml={[null,null,null,"60px","40px","100px"]} gap={[null,null,null,2,3,4]} zIndex={3} direction={[null,null,null,'row','row','row']}>
+                                ml={[null,null,null,"60px","40px","70px"]} gap={[null,null,null,2,3,4]} zIndex={3} direction={[null,null,null,'row','row','row']}>
 
                                 {props.countdown ? (
                                     <>
