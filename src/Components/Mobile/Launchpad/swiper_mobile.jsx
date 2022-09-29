@@ -9,7 +9,7 @@ import { Box,  Flex, Circle, Spacer} from "@chakra-ui/react"
 import Round from '../../../abi/Round'
 
 export function Swiper(props) {
-  const [position, positionSet] = useState(2)
+  const [position, positionSet] = useState(1)
   const handlers = useSwipeable({ 
       onSwipedLeft: () => position < props.data.length-1 ? positionSet(position+1) : null,
       onSwipedRight: () => position > 0 ? positionSet(position-1) : null })
@@ -52,13 +52,12 @@ export function Swiper(props) {
                 animate={{rotate: 0,
                     scale: index === position ? 1 : 0.5,
                     left: `${(index - position) * 90 - 45}vw`}}
-                transition={{type:'spring', stiffness:260, damping:20}}
-            >
+                transition={{type:'spring', stiffness:260, damping:20}}>
                 <Card {...d}/>
             </motion.div>
         ))}
       </div>
-      <Box position={'absolute'} bottom={'35%'}>
+      <Box position={'absolute'} bottom={'25%'}>
             <Flex width={'100%'} gap={1} verticalAlign={'center'} justifyContent={'center'} align={'center'}>
             {[...Array(props.data.length)].map( (d, index) => (
                 <>

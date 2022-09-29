@@ -86,11 +86,11 @@ export const Card = (props) => {
                 </Box>
             </Flex>
         </Box>
-        <Flex position={'absolute'} left={-5} bottom={0} width={'100vw'} px={10} gap={2}>
+        <Flex position={'absolute'} left={-5} bottom={20} width={'100vw'} px={10} gap={4}>
             {props.countdown? (
                <Flex maxWidth={'100vh'} width={'100%'}>
                     <MetaMaskBuy account={account} setAccount={setAccount} />
-                        <Spacer/>
+                    <Spacer/>
                     <CrossMintBuy max={props.max} contract={props.address} account={account}/> 
                 </Flex>  
             ) : null}
