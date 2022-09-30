@@ -60,6 +60,3 @@ const ContractsData = [
 ]
 
 export default ContractsData;
-
-
-//rare previous end: 1664496000
