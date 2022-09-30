@@ -49,7 +49,7 @@ const ContractsData = [
     stock_amt:150, access:'whitelist', start: 1660672800, end: 1660759200,
     address:"0xe27969820B3F24f192c774a19AdFaeAAF73A0556"},
   {price: '0.12', rarity:'RARE', deltaSupply: 0, max: 10,
-    stock_amt:5000, access:'public mint', start: 166200840, end: 1664496000,
+    stock_amt:5000, access:'public mint', start: 166200840, end: 1664590000,
     address: "0x1bc2Cb2168B00170B3bE4b280F230DbC58D502a3"},
   {price: '0.39', rarity: 'EPIC', deltaSupply: 0, max: 3,
     stock_amt:650, access:'whitelist', start: 16608456000, end: 16608528000,
@@ -60,3 +60,6 @@ const ContractsData = [
 ]
 
 export default ContractsData;
+
+
+//rare previous end: 1664496000

@@ -5,19 +5,48 @@ import lanaImg from '../../../Assets/Launchpad/yachts_animation.gif'
 import { MetaMaskBuy } from '../../../Utils/Mint/metaMaskModal';
 import { CrossMintBuy } from '../../../Utils/Mint/crossMintModal';
 import SecondsToTime from '../../../Utils/Mint/secondsToTime';
+import Round from '../../../abi/Round'
 
 export const Card = (props) => {
     const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
     const [time, setTime] = useState(0)
     const [account, setAccount] = useState(null)
 
-    const currentDate = Math.floor(new Date()/1000)
+    const currentDate = Math.floor(new Date() /1000)
+    const [supply, setSupply] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [ pct, setPct ] = useState(0)
+    const [countdown, setCountdown ] = useState(false)
+    const [ status, setStatus] = useState(null)
+
+    useEffect( () => {
+        currentDate < props.start? (
+            setStatus('COMING SOON') ): ( currentDate > props.end ? setStatus('SOLD OUT') : null ) //temporary
+
+        if( currentDate > props.start && currentDate < props.end){ //currentDate > d.start &&
+            setCountdown(true);
+            const round = Round(props.address);
+            (async () => {
+                try{
+                    const supply = (await round.roundTotalSupply()).toNumber()
+                    setSupply(supply)
+                    setPct(( supply/ props.stock_amt) * 100)
+                } catch (error){
+                    console.log(error);
+                } finally {
+                    setLoading(false)
+                }
+            })()
+        }
+    }, )
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setTime(SecondsToTime( props.end - currentDate ));
-        }, 1000);
-        return () => clearTimeout(timer);
+        if (countdown){
+            const timer = setTimeout(() => {
+                setTime(SecondsToTime( props.end - currentDate ));
+            }, 1000);
+            return () => clearTimeout(timer);
+        }
     })
 
     return(
@@ -43,19 +72,19 @@ export const Card = (props) => {
                             height={[null,null,"10%","50%","65%","68%"]}
                             borderRadius={'60px'} >
                                 <Box position={'relative'} left={[null,null,null,'55%','65%','69%']} height={'90%'} top={'45%'} width={'60%'} alignItems={'flex-start'} justifyContent={'flex-start'} transform={'rotate(90deg)'} transformOrigin={'top'}>
-                                    {props.stock? (
+                                    {supply? (
                                             <>  
                                                 <HStack>
-                                                    <Text> {props.stock_pct}% </Text> 
+                                                    <Text> {pct}% </Text> 
                                                     <Spacer/>
                                                     <Text>
                                                         <Badge fontSize='15px' > {props.access} </Badge>
                                                     </Text>
                                                     <Spacer/>
-                                                    <Text> {props.stock}/{props.stock_amt} </Text>
+                                                    <Text> {supply}/{props.stock_amt} </Text>
                                                 </HStack>
                                                 <Progress size={'md'} 
-                                                    value={props.stock_pct} 
+                                                    value={pct} 
                                                     bg={'light'} borderColor={'dark'} borderWidth={'0.5px'} 
                                                     _dark={{ bg:'dark', borderColor:'light'}}
                                                     colorScheme={'blue'} style={{zIndex:2}}/>
@@ -80,7 +109,7 @@ export const Card = (props) => {
                                             </Text>
                                             <Spacer />
                                             <Heading pl={1} color='accent' fontSize={'44px'}>
-                                            {props.countdown? time : props.status}
+                                            {countdown? time : status}
                                             </Heading>
                                     </HStack>
                                 </Box>
@@ -96,13 +125,13 @@ export const Card = (props) => {
                             <Flex position={'relative'} bottom={[null,null,null,'10%','10%','10%']} width={'10%'} 
                                 ml={[null,null,null,"60px","40px","70px"]} gap={[null,null,null,2,3,4]} zIndex={3} direction={[null,null,null,'row','row','row']}>
 
-                                {props.countdown ? (
+                                {countdown && (
                                     <>
                                         <MetaMaskBuy account={account} setAccount={setAccount} />
                                             <Spacer/>
                                         <CrossMintBuy max={props.max} contract={props.address} account={account}/> 
                                     </> 
-                                ) : null}
+                                )}
                             </Flex> 
                         </Box>
                     </Box>
