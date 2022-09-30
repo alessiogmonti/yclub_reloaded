@@ -64,11 +64,11 @@ export const Card = (props) => {
                         <Box
                             className='background'
                             position={'absolute'}
-                            left={[null,null,null,"15%","13%","15%"]}
+                            left={[null,null,null,"15%","13%","16%"]}
                             bg={useColorModeValue('rgba(255,255,255,0.5)', 'dark')} 
                             borderColor={[null,null,null,'accent','accent','accent']} borderWidth={'1px'} 
                             width={[null,null,null,"60%","60%","55%"]}
-                            top={'7%'}
+                            top={'8%'}
                             height={[null,null,"10%","50%","65%","68%"]}
                             borderRadius={'60px'} >
                                 <Box position={'relative'} left={[null,null,null,'55%','65%','69%']} height={'90%'} top={'45%'} width={'60%'} alignItems={'flex-start'} justifyContent={'flex-start'} transform={'rotate(90deg)'} transformOrigin={'top'}>
@@ -102,13 +102,13 @@ export const Card = (props) => {
                                         </>
                                         )}
                                 </Box>
-                                <Box position={'absolute'} bottom={5} left={10}>
-                                    <HStack gap={10} justifyContent={'space-between'}>
-                                            <Text fontSize={'25px'}>
+                                <Box position={'absolute'} bottom={5} left={4}>
+                                    <HStack gap={5} justifyContent={'space-between'}>
+                                            <Text fontSize={'25px'} pl={5}>
                                                 {props.rarity}
                                             </Text>
                                             <Spacer />
-                                            <Heading pl={1} color='accent' fontSize={'44px'}>
+                                            <Heading color='accent' fontSize={'44px'}>
                                             {countdown? time : status}
                                             </Heading>
                                     </HStack>
