@@ -16,19 +16,18 @@ const iconStyle = {
   
 const allocations = [
     [
-        { 'color': '#175ea1', 'value': 30, 'field': 'Staking Rewards', 'class': 'cls-3'},
-        { 'color': '#16375f', 'value': '22.8', 'field': 'Treasury', 'class': 'cls-6'},
-        { 'color': '#1e3346', 'value': '15', 'field': 'Liquidity', 'class': 'cls-5'}
+        { 'color': '#175EA1', 'value': 30, 'field': 'Staking Rewards', 'class': 'cls-2'},
+        { 'color': '#16375f', 'value': '22.8', 'field': 'Treasury', 'class': 'cls-5'},
+        { 'color': '#1e3346', 'value': '15', 'field': 'Liquidity', 'class': 'cls-4'}
     ],
     [
-        { 'color': '#f4f4f5', 'value': '10', 'field': 'Marketing', 'class': 'cls-9'},
-        { 'color': '#def3fd', 'value': '9.6', 'field': 'Team', 'class': 'cls-7'},
-        { 'color': '#a0ddf9', 'value': '5', 'field': 'Presale', 'class': 'cls-8'},
+        { 'color': '#f4f4f5', 'value': '11.2', 'field': 'Marketing', 'class': 'cls-8'},
+        { 'color': '#def3fd', 'value': '9.6', 'field': 'Team', 'class': 'cls-6'},
     ],
     [
-        { 'color': '#4db6e8', 'value': '4', 'field': 'Airdrop', 'class': 'cls-2'},
-        { 'color': '#499ad4', 'value': '2.4', 'field': 'Advisory', 'class': 'cls-1'},
-        { 'color': '#447cbf', 'value': '1.2', 'field': 'Private Sale', 'class': 'cls-4'}
+        { 'color': '#a0ddf9', 'value': '5.5', 'field': 'NFT Holders', 'class': 'cls-7'},
+        { 'color': '#62c5f0', 'value': '3.5', 'field': 'Team Private Sale', 'class': 'cls-1'},
+        { 'color': '#3FABE1', 'value': '2.4', 'field': 'Advisory', 'class': 'cls-3'},
     ]
 ]
 
@@ -59,7 +58,7 @@ export const MobileTokenomics = () => {
         <Allocations />
         <Show breakpoint="(max-height:400px)">
             <Center mx={[null,"2%"]} position={'relative'} my={10} rounded={'40px'} width={'100%'} height={'51%'} bg='light' _dark={{bg:'dark', borderColor:'accent'}} border={'1px'} borderColor={'white'}>
-                <SimpleGrid pl={2} columns={3} spacingX={2} width={'45%'}>
+                <SimpleGrid pl={2} columns={3} spacingX={2} width={'45%'} verticalAlign={'center'} align={'center'} alignItems={'center'} >
                     {allocations.map( (d,index) => (
                         <VStack onClick={() => toggle(index)} border={active == index ? '1px' : null} borderColor={'dark'} _dark={{borderColor:'white'}} rounded={'full'} px={6} py={3} width={'110%'}> {d.map( (d2) => (
                             <Circle bg={d2.color} size={9} m={1}/>

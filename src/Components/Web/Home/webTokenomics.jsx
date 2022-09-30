@@ -12,7 +12,7 @@ const WebTokenomics = () => {
     //     paths.forEach(d => d.setAttribute('class','hasStroke'))
     // }, [hover])
     return (
-    <Container width={'100vw'} mt={20} mr={20} ml={20} height={'100vh'} top={50}>
+    <Container width={'100vw'} mt={'18vh'} mr={20} ml={20} height={'100vh'} top={'35%'}>
         <Flex>
         <Box mr={10} display={'block'}>
             <VStack align={'left'} spacing={10}>
@@ -32,7 +32,7 @@ const WebTokenomics = () => {
                     INITIAL SUPPLY
                     </Heading>
                     <Heading variant="special" fontSize={['40px','40px','50px','50px','60px']}>
-                    117 200 000
+                    33 000 000
                     </Heading>
                 </Box>
                 <Heading variant="Landing" fontSize={["60px"]} color={'light'} pt={100}>
