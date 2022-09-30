@@ -14,7 +14,7 @@ const items = [
     {title: 'Polo Marco', date:'Brand Strategists & Communications', content:<DataContainer bio={"Photographer and Strategist, with over 5 years of helping brands strengthen their communications, communities, and lifestyle experiences."} fullName={"Kennyatta Collins"} profileImg={"/Team/Profile/kennyatta.png"} companyImg={['/Team/companies/diesel.png','/Team/companies/CC.png']}/>},
     {title: 'Carrara', date:'UI/UX', content:<DataContainer bio={"Years of experience specializing in designing web & mobile apps, websites and admin portals. Believes that design is not about beautiful pixels but about solving problems & achieving business and user goals."} fullName={"Anastasiia Pachenko"} profileImg={"/Team/Profile/anastasiia.png"}/>},
     {title: 'Blade', date:'Strategy', content:<DataContainer bio={"Engineered for several Fortune 500 companies in a variety of technology related roles while building his website into the top 1000 most visited websites in the world."} fullName={"Michael Lawrence"} profileImg={"/Team/Profile/michael.png"} companyImg={['/Team/companies/DirectLiquidation.png']}/>},
-    {title: 'CryptoDon', date:'Advisor / Influencer', content:<DataContainer bio={"Early investor in many projects like BAYC and in the ethereum blockchain. Dedicated curator in owned Web3 investment communities."} />},
+    {title: 'CryptoDon', date:'Advisor', content:<DataContainer bio={"Early investor in many projects like BAYC and in the ethereum blockchain. Dedicated curator in owned Web3 investment communities."} />},
     {title: 'Cyrill', date:'Technical Project Manager', content:<DataContainer bio={"Project manager with 4 years experience in crypto projects. Tutor in business development and finance."} />},
     {title: 'SHR', date:'Art Director (NFT)', content:<DataContainer bio={"Digital Art artist | Grafic designer | Matte Painting | CGI designer."} fullName={"Shumov Roman"} />},
     {title: 'David', date:'CG Artist', content:<DataContainer bio={"Our genius responsible for visual effects."} />},
@@ -41,7 +41,7 @@ const MobileTeam = () => (
             <Scroller data={items}/>
         </Box>
         <MobileFooter />
-        <CTA />
+        <CTA badge_text={<>COMING<br/>SOON</>}/>
     </motion.div>
 )
 

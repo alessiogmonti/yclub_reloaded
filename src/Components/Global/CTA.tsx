@@ -9,7 +9,7 @@ const arrowStyle = {
   height: '73px',
 }
 
-export const CTA = () => (
+export const CTA = (props) => (
   <Container
     flexDirection="row"
     position="fixed"
@@ -24,7 +24,8 @@ export const CTA = () => (
     < CustomButton  
                     variant={'main-link'} 
                     accent_text={"BUY"}
-                    regular_text={'$SYC'} 
+                    regular_text={'$SYC'}
+                    badge_text={props.badge_text} 
                     icon={<Arrow 
                       strokeWidth={'0.25px'}
                       width={'73px'}

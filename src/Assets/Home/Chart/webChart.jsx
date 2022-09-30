@@ -1,7 +1,7 @@
 import { forwardRef } from "react"
 
 export const Allocations = forwardRef((props, ref) => (
-    <svg width={props.width} height="auto" viewBox="0 0 924 811" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref}>
+    <svg width={props.width} height="auto" viewBox="0 0 932 817" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref}>
 <circle cx="554" cy="453" r="345" fill="#051534" fill-opacity="0.99"/>
 <circle cx="554" cy="453" r="344.5" stroke="#2491EB" stroke-opacity="0.99"/>
 <path d="M567.206 437.575L846.512 232.372L882.008 231.815M567.206 437.575L758.919 800.893L806.913 800.14M567.206 437.575L293.765 732.909L265.987 733.345M567.206 437.575L363 146.5L320.5 146.5M567.206 437.575L189 466.5L144.5 466.5M567.206 437.575L258 287.5L202 287.5M567.206 437.575L491.5 97L425.5 97M567.206 437.575L561.5 36.0004L506 36.0001" stroke="white" stroke-opacity="0.6" stroke-linejoin="round" stroke-dasharray="5 5"/>

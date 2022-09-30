@@ -23,3 +23,18 @@
   border: '1px solid white';
   top: -35vh;
 }
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+
+      .MobileContainer{
+        height: 90vh;
+        border: 1px solid red;
+      }
+
+      .image{
+        height: 90%;
+      }
+    }

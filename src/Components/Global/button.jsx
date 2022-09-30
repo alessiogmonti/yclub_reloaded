@@ -1,4 +1,4 @@
-import { Box, Text, Container, Flex, Spacer, IconButton, useDisclosure, Show, Hide } from "@chakra-ui/react"
+import { Box, Text, Container, Flex, Spacer, IconButton, useDisclosure, Show, Hide, Badge } from "@chakra-ui/react"
 // import Link from 'next/link'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { useState } from "react"
@@ -13,8 +13,13 @@ export const CustomButton = (props) => {
                         {props.accent_text} &nbsp;
                     </Text>
                     <Text variant={props.variant}>
-                        {props.regular_text} &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                        {props.regular_text} 
                     </Text>
+                    {props.badge_text && 
+                            <Badge variant={'subtle'} fontSize={'10px'} minWidth={'max-content'} width={'17%'} overflowWrap={'break-word'} lineHeight={'12px'} ml={2} mb={10}>
+                               {props.badge_text}
+                            </Badge>
+                            }
                 </Container>
                 <Spacer />
                 {props.content ? (<MenuButton {...props} />) : (

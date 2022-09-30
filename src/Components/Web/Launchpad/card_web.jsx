@@ -1,4 +1,4 @@
-import { Image, Box, Flex, Spacer, useColorModeValue, Heading, Progress, HStack, Text, Badge } from '@chakra-ui/react';
+import { Image, Box, Flex, Spacer, useColorModeValue, Heading, Progress, HStack, Text, Badge, AspectRatio } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 import lanaImg from '../../../Assets/Launchpad/yachts_animation.gif'
@@ -59,9 +59,11 @@ export const Card = (props) => {
                         </Heading>
                     </Box>
                 </Flex>
-                <Box height={'100vh'} width={'100%'} verticalAlign={'top'} alignItems={'center'} maxWidth={['30vw','30vw','40vw','60vw']}  justifyContent={'center'}>
-                    <Flex justifyContent={'center'} position={'relative'} style={{zIndex:0}} width={'auto'} height={'100%'}>
+                <Box height={'100vh'} width={'100%'} verticalAlign={'top'} alignItems={'center'} 
+                maxWidth={['30vw','30vw','40vw','60vw']} justifyContent={'center'}>
+                    <Box justifyContent={'center'} position={'relative'} style={{zIndex:0}} width={'auto'} height={'100%'}>
                         <Box
+                            margin={'auto'}
                             className='background'
                             position={'absolute'}
                             left={[null,null,null,"15%","13%","16%"]}
@@ -114,26 +116,22 @@ export const Card = (props) => {
                                     </HStack>
                                 </Box>
                         </Box>
-                    </Flex>
-                    <Box position={'absolute'} height={'100vh'} width={'auto'} top={10}>
-                        <Box className={'ImgContainer'} height={'100%'} width={'auto'} top={10}>
-                            {isSafari ? (
-                                <Image mt={5} className={'image'} src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"15%","3%","5%"]} display={'block'} width={[null,null,null,'40%','45%','55%']} height={'auto'}/>
-                            ) : (
-                                <Image mt={5} className={'image'} src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} position={'relative'} style={{zIndex:1}} left={[null,null,null,"15%","7%","8%"]} boxSize={[null,null,null,"400px","500px","600px"]} objectFit={'cover'} display={'block'} />
-                                )}
-                            <Flex position={'relative'} bottom={[null,null,null,'10%','10%','10%']} width={'10%'} 
-                                ml={[null,null,null,"60px","40px","70px"]} gap={[null,null,null,2,3,4]} zIndex={3} direction={[null,null,null,'row','row','row']}>
-
+                    </Box>
+                    <Box className={'ImgContainer'} position={'absolute'} height={'60%'} width={'100%'} left={'7%'} top={10}>
+                        <AspectRatio position={'relative'} maxW={'550px'} width={'100%'} height={'auto'} ratio={1} top={50}>
+                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} 
+                                    boxSize={[null,null,null,"100%","100%","100%"]} objectFit={'cover'} />
+                        </AspectRatio>
+                        <Flex position={'relative'} bottom={[null,null,null,'10%','10%','15%']} width={'1%'} zIndex={100}
+                                mr={'10px'} gap={[null,null,null,2,3,4]} direction={[null,null,null,'row','row','row']}>
                                 {countdown && (
-                                    <>
-                                        <MetaMaskBuy account={account} setAccount={setAccount} />
-                                            <Spacer/>
+                                    <Box width={'30%'}>
                                         <CrossMintBuy max={props.max} contract={props.address} account={account}/> 
-                                    </> 
+                                             <Spacer/>
+                                        <MetaMaskBuy account={account} setAccount={setAccount} />
+                                    </Box> 
                                 )}
                             </Flex> 
-                        </Box>
                     </Box>
                 </Box>
             </Box>

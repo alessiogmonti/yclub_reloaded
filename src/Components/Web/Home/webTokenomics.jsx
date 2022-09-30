@@ -41,8 +41,8 @@ const WebTokenomics = () => {
             </VStack>
         </Box>
         <Box display={'flex'} justifyContent={'flex-end'} >
-            <Box position={[null,null,'relative','absolute']} right={0} mr={20} ml={10}>
-                <Allocations width={"50vw"} fill={useColorModeValue('rgba(255,255,255,0.8)', 'dark')} ref={ref}/>
+            <Box position={[null,null,'relative','absolute']} right={0} mr={25} ml={10}>
+                <Allocations width={"52vw"} fill={useColorModeValue('rgba(255,255,255,0.8)', 'dark')} ref={ref}/>
             </Box>
         </Box>
         </Flex>

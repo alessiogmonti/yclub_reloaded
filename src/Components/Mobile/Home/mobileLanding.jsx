@@ -18,6 +18,6 @@ export const MobileLanding = () => (
       </Box>
     </Show>
     <Divider my={2} mb={10} width={'50%'}/>
-    <CTA />
+    <CTA badge_text={<>COMING<br/>SOON</>}/>
   </Container>
 )

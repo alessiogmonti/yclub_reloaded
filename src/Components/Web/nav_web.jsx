@@ -67,7 +67,7 @@ export const LandingLogo = () => {
               </Flex>
         </Box>
       </Box>
-      <CTA />
+      <CTA badge_text={'COMING SOON'}/>
     </>
   )
 }

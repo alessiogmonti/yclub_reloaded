@@ -65,7 +65,7 @@ export const Card = (props) => {
             </Box>
         </Flex>
         <Box width={'100%'} my={'55px'} alignItems={'center'} justifyContent={'center'}>
-            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'65px'} position={'relative'} style={{zIndex:2}}/>
+            <Image class={'image'} src={lanaImg} alt='Lana_arctic' borderRadius={'65px'} position={'relative'} style={{zIndex:2}}/>
             <Flex justifyContent={'center'} position={'relative'} style={{zIndex:0}} >
                 <Box   
                     position={'relative'}

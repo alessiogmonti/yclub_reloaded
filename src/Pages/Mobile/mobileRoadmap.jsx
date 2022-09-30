@@ -31,7 +31,7 @@ const MobileRoadmap = () => (
             <Scroller data={data} component={<DataContainer />}/>
         </Box>
         <MobileFooter />
-        <CTA />
+        <CTA badge_text={<>COMING<br/>SOON</>} />
     </motion.div>
 )
 

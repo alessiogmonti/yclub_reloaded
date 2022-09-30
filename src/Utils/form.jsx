@@ -6,6 +6,24 @@ import { CustomButton } from '../Components/Global/button'
 import { Formik, Field, Form } from 'formik'
 import { AiOutlineMail } from 'react-icons/ai'
 import { BsPersonFill } from 'react-icons/bs'
+import axios from 'axios'
+import * as client from '@mailchimp/mailchimp_marketing'
+
+client.setConfig({
+  apiKey: "50279eb57d2ee2ad942ebb19eebdffdb-us14",
+  server: "us14",
+});
+
+const handleSubmit = async (values) => {
+  const response = await client.lists.addListMember("509793", {
+    email_address: values.email,
+    status: "pending",
+    merge_fields: {
+        "FNAME" : values.name
+    }
+  });
+  console.log(response);
+};
 
 function FormManager(values) {
     function validateName(value) {
@@ -28,10 +46,30 @@ return (
     <Formik
     initialValues={{name: "", email: ""}}
     onSubmit={(values, actions) => {
-        setTimeout(() => {
-        alert(JSON.stringify(values, null, 2))
-        actions.setSubmitting(false)
-        }, 1000)
+        try{
+            handleSubmit(values)
+            // axios({
+            //     method: 'POST',
+            //     url: `https://yclub.us14.list-manage.com/subscribe/post`,
+            //     headers: {'X-HTTP-Method-Override'}
+            //     json: true,
+            //     url: `${MailChimpConfig.URL}/lists/${MailChimpConfig.MAILING_LIST_ID}/members`,
+            //     headers: {
+            //         Authorization: `apiKey ${MailChimpConfig.apiKey}`
+            //     },
+            //     body: {
+            //     email_address: email,
+            //     status: 'subscribed',
+            //     merge_fields: {
+            //         'FNAME': firstName,
+            //         'LNAME': lastName,
+            //     }
+            //   })
+        } catch (error){
+            console.log(error)
+        } finally{
+            actions.setSubmitting(false)
+        }
     }}
     >
     {(props) => (
