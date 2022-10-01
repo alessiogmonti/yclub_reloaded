@@ -3,7 +3,7 @@ import { AiFillCloseCircle } from 'react-icons/ai'
 
 export const BuyButton = (props) => {
     return(
-    <Box maxWidth={['80%',null,null,null,null,'350px']} minWidth={[null,null,null,'max-content','max-content',"max-content"]} width={'100%'} display={'flex'} verticalAlign={'center'} align={'center'} layerStyle={'button'} position="relative" height={'59px'} maxHeight={'100px'} minHeight={'max-content'} margin={1}>
+    <Box maxWidth={['80%',null,null,null,null,'450px']} minWidth={[null,null,null,'max-content','max-content',"200px"]} width={'100%'} display={'flex'} verticalAlign={'center'} align={'center'} layerStyle={'button'} position="relative" height={'59px'} maxHeight={'100px'} minHeight={'max-content'} margin={1}>
         <Flex width={'100%'} maxWidth={'max-content'} justifyContent={'space-between'} alignItems={'center'} verticalAlign={'center'}  minHeight={'max-content'} gap='0' direction={props.direction} margin={'auto'}>
         {/* {props.available ? ( */}
                 <IconButton 

@@ -52,7 +52,7 @@ export const Card = (props) => {
     return(
         <div className='card'>
             <Box height={'100%'} width={'100%'} verticalAlign={'top'} alignItems={'center'} maxWidth={['30vw','30vw','40vw','60vw']}  justifyContent={'center'}>
-                <Flex position={'relative'} top={"55px"} px={1} gap={4} zIndex={3} left={[null,null,null,'40px','55px','10%']}>
+                <Flex position={'relative'} top={"75px"} px={1} gap={4} zIndex={3} left={[null,null,null,'40px','55px','13%']}>
                     <Box layerStyle={'button'} height={'auto'} width={'auto'} minWidth={'max-content'} border={null} px={[null,null,null,2,2,5]} verticalAlign={'center'} justifyContent={'center'} alignItems={'center'} >
                         <Heading fontSize={[null,null,null,"28px","29px","30px"]}>
                             107M / 351" SUPER YACHT LANA
@@ -117,18 +117,18 @@ export const Card = (props) => {
                                 </Box>
                         </Box>
                     </Box>
-                    <Box className={'ImgContainer'} position={'absolute'} height={'60%'} width={'100%'} left={'7%'} top={10}>
-                        <AspectRatio position={'relative'} maxW={'550px'} width={'100%'} height={'auto'} ratio={1} top={50}>
+                    <Box className={'ImgContainer'} position={'absolute'} height={'60%'} width={'100%'} left={'8%'} top={10}>
+                        <AspectRatio position={'relative'} maxW={'60vh'} width={'100%'} height={'auto'} ratio={1} top={50}>
                             <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} 
                                     boxSize={[null,null,null,"100%","100%","100%"]} objectFit={'cover'} />
                         </AspectRatio>
                         <Flex position={'relative'} bottom={[null,null,null,'10%','10%','15%']} width={'1%'} zIndex={100}
                                 mr={'10px'} gap={[null,null,null,2,3,4]} direction={[null,null,null,'row','row','row']}>
                                 {countdown && (
-                                    <Box width={'30%'}>
-                                        <CrossMintBuy max={props.max} contract={props.address} account={account}/> 
+                                    <Box width={'40%'}>
+                                        <CrossMintBuy max={props.max} contract={props.address} account={account} size={55}/> 
                                              <Spacer/>
-                                        <MetaMaskBuy account={account} setAccount={setAccount} />
+                                        <MetaMaskBuy account={account} setAccount={setAccount} size={55}/>
                                     </Box> 
                                 )}
                             </Flex> 
