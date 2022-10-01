@@ -117,22 +117,21 @@ export const Card = (props) => {
                                 </Box>
                         </Box>
                     </Box>
-                    <Box className={'ImgContainer'} position={'absolute'} height={'60%'} width={'100%'} left={'8%'} top={10}>
+                    <Box className={'ImgContainer'} position={'absolute'} height={'60%'} width={'100%'} left={'6%'} top={10}>
                         <AspectRatio position={'relative'} maxW={'60vh'} width={'100%'} height={'auto'} ratio={1} top={50}>
-                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} 
-                                    boxSize={[null,null,null,"100%","100%","100%"]} objectFit={'cover'} />
+                            <Image src={lanaImg} alt='Lana_arctic' borderRadius={'45px'} boxSize={[null,null,null,"100%","100%","100%"]} objectFit={'cover'} />
                         </AspectRatio>
-                        <Flex position={'relative'} bottom={[null,null,null,'10%','10%','15%']} width={'1%'} zIndex={100}
-                                mr={'10px'} gap={[null,null,null,2,3,4]} direction={[null,null,null,'row','row','row']}>
-                                {countdown && (
-                                    <Box width={'40%'}>
-                                        <CrossMintBuy max={props.max} contract={props.address} account={account} size={55}/> 
-                                             <Spacer/>
-                                        <MetaMaskBuy account={account} setAccount={setAccount} size={55}/>
-                                    </Box> 
-                                )}
-                            </Flex> 
-                    </Box>
+                        <Flex position={'relative'} bottom={[null,null,null,'10%','10%','15%']} width={'100%'} zIndex={100}
+                            m={'10px'} mr={'10px'} gap={[null,null,null,2,3,4]} direction={[null,null,null,'row','row','column']}>
+                            {countdown && (
+                                <Box width={'10%'}>
+                                    <CrossMintBuy max={props.max} contract={props.address} account={account} size={55}/> 
+                                        <Spacer/>
+                                    <MetaMaskBuy account={account} setAccount={setAccount} size={55}/>
+                                </Box> 
+                            )}
+                        </Flex> 
+                 </Box>
                 </Box>
             </Box>
         </div>
