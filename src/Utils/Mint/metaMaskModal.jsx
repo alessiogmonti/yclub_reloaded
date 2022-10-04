@@ -26,13 +26,13 @@ import RoundWithSigner from "../../abi/RoundWithSigner"
 
 export const MetaMaskBuy = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [process, setProcess] = useState(1)
-    const [alert, setAlert] = useState(false)
-    const [loading, setLoading] = useState(false)
+    const [ process, setProcess ] = useState(1)
+    const [ alert, setAlert ] = useState(false)
+    const [ loading, setLoading ] = useState(false)
     const [ mintAmount, setMintAmount ] = useState(1)
     const [ mintMax, setMintMax ] = useState(2) //props.max
     const [ minAvail, setMintAvail ] = useState(0)
-    const [data,setData] = useState()
+    const [ data, setData ] = useState()
 
     useEffect(() => {
         props.account?

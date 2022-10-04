@@ -1,11 +1,11 @@
-import metamskProvider from "./metamskProvider";
+import metamaskProvider from "./metamaskProvider";
 import Round from "./Round";
 let RoundWithSigner;
 
-if (metamskProvider) {
+if (metamaskProvider) {
   RoundWithSigner = (address) => {
     const round = Round(address);
-    const signer = metamskProvider.getSigner();
+    const signer = metamaskProvider.getSigner();
     return round.connect(signer);
   };
 }

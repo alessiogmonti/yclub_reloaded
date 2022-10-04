@@ -5,7 +5,12 @@ import { WebAnimatedRoutes } from "./Utils/webAnimatedRoutes"
 import { MobileAnimatedRoutes } from "./Utils/mobileAnimatedRoutes"
 import { LandingLogo } from "./Components/Web/nav_web"
 
-const App = () => (
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-9NXP8WEGK8"; 
+ReactGA.initialize(TRACKING_ID)
+
+const App = () => {
+  return(
   <>
     <Show breakpoint='(max-width: 1113px)'>
       <BrowserRouter>
@@ -24,6 +29,6 @@ const App = () => (
     </Show>
 
   </>
-)
+)}
 
 export default App
