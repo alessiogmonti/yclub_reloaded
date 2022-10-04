@@ -33,8 +33,8 @@ const MobileLaunchpad = (props) => (
                 fbq('track', 'PageView');`}
             </script>
             <noscript>
-                <img height="1" width="1" style="display:none" 
-                    src="https://www.facebook.com/tr?id={5162146007173539}&ev=PageView&noscript=1"/>
+                {<img height="1" width="1" style="display:none" 
+                    src="https://www.facebook.com/tr?id={5162146007173539}&ev=PageView&noscript=1"/>}
             </noscript>
         </Helmet>
         <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
