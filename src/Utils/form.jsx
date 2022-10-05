@@ -7,23 +7,6 @@ import { Formik, Field, Form } from 'formik'
 import { AiOutlineMail } from 'react-icons/ai'
 import { BsPersonFill } from 'react-icons/bs'
 import axios from 'axios'
-import * as client from '@mailchimp/mailchimp_marketing'
-
-client.setConfig({
-  apiKey: "50279eb57d2ee2ad942ebb19eebdffdb-us14",
-  server: "us14",
-});
-
-const handleSubmit = async (values) => {
-  const response = await client.lists.addListMember("509793", {
-    email_address: values.email,
-    status: "pending",
-    merge_fields: {
-        "FNAME" : values.name
-    }
-  });
-  console.log(response);
-};
 
 function FormManager(values) {
     function validateName(value) {
@@ -48,9 +31,10 @@ return (
     onSubmit={(values, actions) => {
         try{
             handleSubmit(values)
-            // axios({
-            //     method: 'POST',
-            //     url: `https://yclub.us14.list-manage.com/subscribe/post`,
+            axios({
+                method: 'POST',
+                url: `https://api.staticforms.xyz/submit`,
+                body: values
             //     headers: {'X-HTTP-Method-Override'}
             //     json: true,
             //     url: `${MailChimpConfig.URL}/lists/${MailChimpConfig.MAILING_LIST_ID}/members`,
@@ -64,7 +48,7 @@ return (
             //         'FNAME': firstName,
             //         'LNAME': lastName,
             //     }
-            //   })
+              })
         } catch (error){
             console.log(error)
         } finally{

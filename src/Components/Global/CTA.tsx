@@ -1,7 +1,8 @@
-import { useColorModeValue } from '@chakra-ui/react'
+import { Box, IconButton, useColorModeValue, Text, HStack } from '@chakra-ui/react'
 import { Container } from './Container'
 import { CustomButton } from './button'
 import { Arrow } from '../../Assets/arrow'
+import { GrDocumentPerformance } from 'react-icons/gr'
 
 const arrowStyle = {
   strokeWidth: '0.25px',
@@ -10,17 +11,18 @@ const arrowStyle = {
 }
 
 export const CTA = (props) => (
-  <Container
-    flexDirection="row"
-    position="fixed"
-    bottom={2}
-    width="full"
-    maxWidth="3xl"
-    py={3}
-    px={5}
-    zIndex={2}
-    justifyContent={'space-around'}
-  >
+  // <Container
+  //   flexDirection="row"
+  //   position="fixed"
+  //   bottom={2}
+  //   width="full"
+  //   maxWidth="3xl"
+  //   py={3}
+  //   px={5}
+  //   zIndex={2}
+  //   justifyContent={'space-around'}
+  //   mx={9} my={2}
+  // >
     < CustomButton  
                     variant={'main-link'} 
                     accent_text={"BUY"}
@@ -37,5 +39,14 @@ export const CTA = (props) => (
                     right={-2}
                     top={-2.5}
                     />
-  </Container>
+  // </Container>
+)
+
+export const WhitePaper = () => (
+  <Box layerStyle={'button'} maxWidth={'max-content'}>
+    <HStack>
+      <Text variant={'main-link'}> DOCS </Text>
+      <IconButton aria-label={'whitepaper'} variant={'solid'} border={'1px solid black'} isRound icon={<GrDocumentPerformance fontSize={'33px'}/>} />
+    </HStack>
+  </Box>
 )

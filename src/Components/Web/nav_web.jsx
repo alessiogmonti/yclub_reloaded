@@ -2,7 +2,7 @@ import { Logo } from "../Global/Logo"
 import { AiOutlineRightCircle, AiOutlineDownCircle } from "react-icons/ai"
 import { GoCircleSlash } from "react-icons/go"
 
-import { CTA } from "../Global/CTA"
+import { CTA, WhitePaper } from "../Global/CTA"
 import { Link as RLink, useLocation } from "react-router-dom"
 import { Box, Flex, VStack, Text, HStack, IconButton, useColorModeValue, Heading, Link } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
@@ -67,7 +67,12 @@ export const LandingLogo = () => {
               </Flex>
         </Box>
       </Box>
-      <CTA badge_text={'COMING SOON'}/>
+      <Box position={'absolute'} height={'100vh'} width={'100vw'} >
+        <HStack position={'fixed'} left={4} bottom={2} gap={3}>
+          <WhitePaper />
+          <CTA badge_text={'COMING SOON'}/>
+        </HStack>
+      </Box>
     </>
   )
 }
