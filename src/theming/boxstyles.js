@@ -39,5 +39,15 @@ export const BoxStyles = {
             bg: 'rgba(5,21,52,0.94)'
         },
         rounded:'xl'
+    },
+
+    'cardFrame': {
+        bg: 'rgba(255,255,255,0.5)', 
+        _dark: {
+            bg:'dark'
+        },
+        borderColor:'accent',
+        borderWidth: '1px',
+        borderRadius: '10%',
     }
 }
