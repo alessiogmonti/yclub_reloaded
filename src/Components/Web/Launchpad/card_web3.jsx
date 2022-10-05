@@ -69,7 +69,7 @@ export const Card = (props) => {
             w='80%'
             maxW={'80%'}
             maxH={'70%'}
-            templateRows='(0.8fr 0.2fr 0.2fr)'
+            templateRows='(0.8fr 0.1fr 0.1fr)'
             templateColumns='(1fr 1fr)'
             gap={1}
             >

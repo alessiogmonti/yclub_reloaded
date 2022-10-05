@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Box,  Flex, Circle, Spacer, Heading, VStack} from "@chakra-ui/react"
 
 import { useSwipeable } from "react-swipeable"
-import { Card } from "./card_web3"
+import { Card } from "./card_web4"
 
 function WebSwiper(props) {
   const [position, positionSet] = useState(1)
