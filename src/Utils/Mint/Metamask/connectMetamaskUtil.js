@@ -1,12 +1,7 @@
 import detectEthereumProvider from "@metamask/detect-provider";
-// import metamaskProvider from "../../../abi/metamaskProvider";
 
 const connectMetamask = async (setAlert, setCurrentAccount) => {
-  const provider = await detectEthereumProvider()
-  console.log(provider)
-  const { ethereum } = window
-  console.log(window)
-  // console.log(ethereum.providers.find((provider) => provider))
+  let { ethereum } = window;
 
     try {
       if (!ethereum) {
@@ -14,11 +9,25 @@ const connectMetamask = async (setAlert, setCurrentAccount) => {
         setAlert(true);
         return;
       }
-      if (!ethereum.isConnected()) {
+      try{
+        if (!ethereum.isConnected()) {
         console.log("Metamask not connected!");
         setAlert(true)
         return;
+        }
+      } catch (error){
+        console.error(error)
+        try{
+          // console.log('providers',window.ethereum.providers);
+          // console.log('ethVar',ethereum)
+          ethereum = await window.ethereum.providers.find(
+          (provider) => provider.isMetaMask );
+          // console.log('ethVarAfterFind', ethereum)
+        } catch (error){
+          console.error(error)
+        }
       }
+
       const chainId = await ethereum.request({ method: "eth_chainId" });
       if (chainId !== import.meta.env.VITE_ETHERS_ChainId) {
         await ethereum.request({

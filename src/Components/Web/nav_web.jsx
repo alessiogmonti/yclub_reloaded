@@ -2,7 +2,7 @@ import { Logo } from "../Global/Logo"
 import { AiOutlineRightCircle, AiOutlineDownCircle } from "react-icons/ai"
 import { GoCircleSlash } from "react-icons/go"
 
-import { CTA } from "../Global/CTA"
+import { CTA, WhitePaper } from "../Global/CTA"
 import { Link as RLink, useLocation } from "react-router-dom"
 import { Box, Flex, VStack, Text, HStack, IconButton, useColorModeValue, Heading, Link } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
@@ -67,7 +67,12 @@ export const LandingLogo = () => {
               </Flex>
         </Box>
       </Box>
-      <CTA badge_text={'COMING SOON'}/>
+      <Box position={'absolute'} top={0} height={'100vh'} width={'100vw'} >
+        <HStack position={'fixed'} left={10} bottom={10} gap={3} zIndex={10}>
+          <WhitePaper />
+          <CTA badge_text={'COMING SOON'}/>
+        </HStack>
+      </Box>
     </>
   )
 }
@@ -84,7 +89,7 @@ const LinkBox = (props) => {
       {
           props.clicked === props.item && (
               <Box position={'relative'} top={(180) - 45*(1+props.offset)} left={30} overflow={'visible'}>
-                  {props.sublinks.map( (d2,index) => (
+                  {props?.sublinks.map( (d2,index) => (
                           <Box position={'absolute'} top={index*55+"px"} left={index*55+"px"} overflow={'visible'} >
                                       <LinkButton {...d2} />
                           </Box>

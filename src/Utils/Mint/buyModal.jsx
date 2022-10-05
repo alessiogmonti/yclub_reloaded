@@ -46,7 +46,8 @@ export const BuyModal = (props) => {
               <ModalBody>
                 {alert? 
                 (<Text> To continue, you must 
-                  install <Link color={'accent'} isExternal href="https://metamask.io/download/">Metamask</Link>.
+                  install <Link color={'accent'} isExternal href="https://metamask.io/download/">Metamask</Link>. If you have metamask installed and this alert persists, it is likely because of a conflict with a second wallet.
+                  Please access this page from a browser or mobile app that only has metamask installed- thank you, we are working on fixing this.
                   </Text>) :
                 <Text textAlign={'center'} px={6}> 
                   I acknowledge that I decide the validity and worthiness of a launchpad

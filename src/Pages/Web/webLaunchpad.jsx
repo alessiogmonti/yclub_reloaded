@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react"
 import { Helmet } from "react-helmet-async"
 
 import { DarkModeSwitch } from "../../Components/Global/DarkModeSwitch"
-import "../../Components/Web/Launchpad/swiper_web.css"
+import "../../Components/Web/Launchpad/swiper_web2.css"
 import WebSwiper from "../../Components/Web/Launchpad/webSwiper"
 import { WebFooter } from "../../Components/Web/Home/webFooter"
 
@@ -38,15 +38,17 @@ const WebLaunchpad = (props) => {
                     src="https://www.facebook.com/tr?id={5162146007173539}&ev=PageView&noscript=1"/>`}
             </noscript>
         </Helmet>
-        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} style={{position:'absolute', left:'50%', width:'50vw'}}>
             <Box layerStyle={'background'} sx={{filter:'blur(38px)'}}/>
             <DarkModeSwitch/>
-            <Box position={'absolute'} width={'60vw'} left={'55vw'}>
-                <Box display={'flex'} width={'100%'} height={'100vh'} overflowX={'hidden'} >
+            <Box position={'absolute'} width={'100%'} height={'100vh'} margin={'auto'} marginTop={'1vh'}>
+                <Box display={'flex'} width={'100%'} height={'100vh'} overflowX={'hidden'}>
                     <WebSwiper data={props.data} />
                 </Box>
             </Box>
-            <WebFooter/>
+            <Box position={'fixed'} bottom={20} right={0}>
+                <WebFooter/>
+            </Box>
         </motion.div>
     </>
 )}
