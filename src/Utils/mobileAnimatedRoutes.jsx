@@ -12,11 +12,11 @@ import ReactGA from 'react-ga';
 import { useEffect } from 'react'
 
 export function MobileAnimatedRoutes(){
+    const location = useLocation()
     useEffect(() => {
       ReactGA.pageview(window.location.pathname + window.location.search);
       console.log(window.location.pathname)
     }, [location.pathname]);
-    const location = useLocation()
     return  (
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
