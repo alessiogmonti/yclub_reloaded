@@ -46,7 +46,9 @@ const WebLaunchpad = (props) => {
                     <WebSwiper data={props.data} />
                 </Box>
             </Box>
-            <WebFooter/>
+            <Box position={'fixed'} bottom={20} right={0}>
+                <WebFooter/>
+            </Box>
         </motion.div>
     </>
 )}

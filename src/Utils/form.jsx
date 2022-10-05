@@ -1,7 +1,7 @@
 import { FormControl, Text, Spinner,
          FormErrorMessage, Input, 
          InputGroup, InputLeftElement, InputRightElement,
-        FormHelperText, } from '@chakra-ui/react'
+        FormHelperText, Box, } from '@chakra-ui/react'
 import { CustomButton } from '../Components/Global/button'
 import { Formik, Field, Form } from 'formik'
 import { AiOutlineMail } from 'react-icons/ai'
@@ -95,13 +95,15 @@ return (
             </FormControl>
             )}
         </Field>
-        {props.isSubmitting?
-            (        <CustomButton type="submit" variant={'main-link'} accent_text={values.CTA_accent} regular_text={values.CTA_reg} icon={<Spinner mr={1} mt={1} size='xl' /> } buttonWidth={values.buttonWidth} /> )
-            :
-            (        <CustomButton type="submit" variant={'main-link'} accent_text={values.CTA_accent} regular_text={values.CTA_reg} icon={values.CTA_icon} buttonWidth={values.buttonWidth} top={values.top} right={values.right} border={values.border} pad={values.pad}/> )
-        }
+        <Box width={'100%'} display={'flex'} justifyContent={'center'}>
+            {props.isSubmitting?
+                (        <CustomButton type="submit" variant={'main-link'} accent_text={values.CTA_accent} regular_text={values.CTA_reg} icon={<Spinner mr={1} mt={1} size='xl' /> } buttonWidth={values.buttonWidth} /> )
+                :
+                (        <CustomButton type="submit" variant={'main-link'} accent_text={values.CTA_accent} regular_text={values.CTA_reg} icon={values.CTA_icon} buttonWidth={values.buttonWidth} top={values.top} right={values.right} border={values.border} pad={values.pad}/> )
+            }
+         </Box>
         </Form>
-    )}
+        )}
     </Formik>
     )
 }

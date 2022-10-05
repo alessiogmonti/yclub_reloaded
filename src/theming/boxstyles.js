@@ -7,7 +7,7 @@ export const BoxStyles = {
         rounded: '88px',
         bg: 'light',
         _dark: {
-            bg: 'rgba(5,21,52,0.88)',
+            bg: 'rgba(5,21,52,1)',
             borderColor: 'accent'
         },
         height: '59px',
@@ -42,7 +42,7 @@ export const BoxStyles = {
     },
 
     'cardFrame': {
-        bg: 'rgba(255,255,255,0.5)', 
+        bg: 'rgba(228,228,228,0.99)', 
         _dark: {
             bg:'dark'
         },

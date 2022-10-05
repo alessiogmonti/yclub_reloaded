@@ -1,7 +1,8 @@
-import { Box, IconButton, useColorModeValue, Text, HStack } from '@chakra-ui/react'
+import { Box, IconButton, useColorModeValue, Text, HStack, Link } from '@chakra-ui/react'
 import { Container } from './Container'
 import { CustomButton } from './button'
 import { Arrow } from '../../Assets/arrow'
+import { Whitepaper } from '../../Assets/whitepaper'
 import { GrDocumentPerformance } from 'react-icons/gr'
 
 const arrowStyle = {
@@ -43,10 +44,12 @@ export const CTA = (props) => (
 )
 
 export const WhitePaper = () => (
-  <Box layerStyle={'button'} maxWidth={'max-content'}>
-    <HStack>
-      <Text variant={'main-link'}> DOCS </Text>
-      <IconButton aria-label={'whitepaper'} variant={'solid'} border={'1px solid black'} isRound icon={<GrDocumentPerformance fontSize={'33px'}/>} />
-    </HStack>
+  <Box layerStyle={'button'} maxWidth={'max-content'} pl={5} verticalAlign={'middle'}>
+    <Link isExternal href={'https://docs.yclub.io/overview/yclub'}>
+      <HStack position={'relative'} top={1} zIndex={5} minH={'max-content'}>
+          <Text variant={'main-link'} _hover={{color:'accent'}} px={3} py={0.5}> DOCS </Text>
+          <IconButton aria-label={'whitepaper'} variant={'ghost'} px={5} py={3} isRound icon={<Whitepaper color={useColorModeValue('rgba(5,21,52,0.99)', 'white')} size={'59px'}/>} zIndex={5} />
+      </HStack>
+    </Link>
   </Box>
 )

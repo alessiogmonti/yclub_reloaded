@@ -69,10 +69,10 @@ export const MetaMaskBuy = (props) => {
           <BuyButton
             click={onOpen}
             available
-            regular_text={'connect wallet'}
+            regular_text={'metamask'}
             direction={'row-reverse'}
             position={'relative'}
-            icon={<Ethereum fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')} size={props.iconSize} />}
+            icon={<Ethereum fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')} size={props.iconSize}/>}
             />
            
           <Modal isOpen={isOpen} onClose={onClose} motionPreset={'slideInBottom'}>

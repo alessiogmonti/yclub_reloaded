@@ -67,8 +67,8 @@ export const LandingLogo = () => {
               </Flex>
         </Box>
       </Box>
-      <Box position={'absolute'} height={'100vh'} width={'100vw'} >
-        <HStack position={'fixed'} left={4} bottom={2} gap={3}>
+      <Box position={'absolute'} top={0} height={'100vh'} width={'100vw'} >
+        <HStack position={'fixed'} left={10} bottom={10} gap={3} zIndex={10}>
           <WhitePaper />
           <CTA badge_text={'COMING SOON'}/>
         </HStack>
@@ -89,7 +89,7 @@ const LinkBox = (props) => {
       {
           props.clicked === props.item && (
               <Box position={'relative'} top={(180) - 45*(1+props.offset)} left={30} overflow={'visible'}>
-                  {props.sublinks.map( (d2,index) => (
+                  {props?.sublinks.map( (d2,index) => (
                           <Box position={'absolute'} top={index*55+"px"} left={index*55+"px"} overflow={'visible'} >
                                       <LinkButton {...d2} />
                           </Box>

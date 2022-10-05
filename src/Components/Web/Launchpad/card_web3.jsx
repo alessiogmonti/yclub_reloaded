@@ -78,7 +78,7 @@ export const Card = (props) => {
                 </GridItem>
                 <GridItem position={'relative'} minWidth={0} minHeight={0} margin={'auto'} height={'100%'} width={'100%'} area={'info'}>
                         <HStack minWidth={'100%'} padding={'2%'}>
-                            <Text color={'accent'} fontWeight={'700'}> 22% </Text>
+                            <Text color={'accent'} fontWeight={'700'}> {pct}% </Text>
                             <Spacer/>
                             <Text>
                                 <Badge fontSize='15px' mr={2}> RARE </Badge>
@@ -91,7 +91,7 @@ export const Card = (props) => {
                             <Spacer/>
                             <Text> 100/300</Text>
                         </HStack>
-                        <Progress   justifyContent={'center'} verticalAlign={'center'} alignItems={'center'} size={'md'} value={'22%'} bg={'light'} borderColor={'dark'} borderWidth={'0.5px'}
+                        <Progress   justifyContent={'center'} verticalAlign={'center'} alignItems={'center'} size={'md'} value={pct} bg={'light'} borderColor={'dark'} borderWidth={'0.5px'}
                                         _dark={{bg:'dark', borderColor:'light'}}
                                         colorScheme={'blue'} style={{zIndex:2}} minWidth={'60%'}/>
                 </GridItem> 

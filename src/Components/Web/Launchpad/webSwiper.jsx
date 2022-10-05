@@ -14,6 +14,7 @@ function WebSwiper(props) {
   return (
     <Box {...handlers} zIndex={6} position={'relative'} display={'flex'} justifyContent={'center'} height={'100vh'} width={'100%'} >
           <Box width={'100%'} display={'flex'} justifyContent={'center'} >
+          <NavIndex length={props.data.length} position={position} positionSet={positionSet}/>
           {props.data.map( (d,index) => (
               <motion.div className="container" key={index}
                   initial={{scale: 0, rotation: -180, opacity:0}}
@@ -26,20 +27,23 @@ function WebSwiper(props) {
               </motion.div>
           ))}
         </Box>
-        <Box className="navCircles" position={'absolute'} bottom={0} left={'20%'} display={'block'}>
-              <Flex width={'100%'} gap={1} verticalAlign={'center'} justifyContent={'center'} align={'center'}>
-                <Heading mr={5} variant={'special'} fontSize={'25px'} lineHeight={'25px'} color={'light'}> view releases: </Heading>
-                {[...Array(props.data.length)].map( (d, index) => (
-                    <>
-                    { position==index ? <Circle key={index+'_circleActive'} size={8} bg={'light'} borderColor={'accent'} borderWidth={'1px'}/> :
-                    <Circle key={index+'_circle'} onClick={() => positionSet(index)} size={5} bg={'dark'} borderColor={'light'} borderWidth={'1px'}/> }
-                    <Spacer key={index+'_spacer'} />
-                    </>
-                ))}
-              </Flex>
-          </Box>
     </Box>
   );
 }
+
+const NavIndex = (props) => (
+  <Box className="navCircles" transform={'rotate(90deg)'} transformOrigin={'center'} position={'absolute'} right={0} bottom={'50%'} height={'5%'} display={'block'} margin={'5px'} marginRight={'50px'} zIndex={5}>
+    <Flex width={'100%'} gap={1} verticalAlign={'center'} justifyContent={'center'} align={'center'}>
+      {/* <Heading mr={5} variant={'special'} fontSize={'25px'} lineHeight={'25px'} color={'light'}> view releases: </Heading> */}
+      {[...Array(props.length)].map( (d, index) => (
+          <>
+          { props.position==index ? <Circle key={index+'_circleActive'} size={8} bg={'light'} borderColor={'accent'} borderWidth={'1px'}/> :
+          <Circle key={index+'_circle'} onClick={() => props.positionSet(index)} size={5} bg={'dark'} borderColor={'light'} borderWidth={'1px'}/> }
+          <Spacer key={index+'_spacer'} />
+          </>
+      ))}
+    </Flex>
+  </Box>
+)
 
 export default WebSwiper;
