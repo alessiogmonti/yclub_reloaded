@@ -23,6 +23,7 @@ import connectMetamask from "./Metamask/connectMetamaskUtil"
 import ContractData from "../../Data/contractsData"
 import Round from "../../abi/Round"
 import RoundWithSigner from "../../abi/RoundWithSigner"
+import { ethers } from "ethers"
 
 export const MetaMaskBuy = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -104,7 +105,7 @@ export const MetaMaskBuy = (props) => {
                             <IconButton size={'lg'} disabled={mintAmount >= mintMax} onClick={() => setMintAmount(mintAmount+1)} icon={<AiFillPlusCircle />} />
                         </ButtonGroup>
                         <Spacer />
-                        <ButtonGroup size={'xl'} isAttached onClick={() => handleMintClick(setLoading)}>
+                        <ButtonGroup size={'xl'} isAttached onClick={() => handleMintClick(setLoading, props, mintAmount)}>
                     <Button px={2} bg={'whiteAlpha.800'} color={'dark'}
                     borderColor={'accent'} borderWidth={'1px'}
                     borderLeftRadius={'100px'}
@@ -188,10 +189,13 @@ export const MetaMaskBuy = (props) => {
       )
 }
 
-const handleMintClick = async (setLoading) => {
+const handleMintClick = async (setLoading, props, mintAmount) => {
     setLoading(true);
+    console.log(props)
+    console.log(props.address)
     try {
       const roundWithSigner = RoundWithSigner(props.address);
+      console.log(roundWithSigner)
       const price = await roundWithSigner.mintPrice();
       console.log("price: ", ethers.utils.formatEther(price));
       const tx = await roundWithSigner.paidMint(mintAmount, {

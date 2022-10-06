@@ -94,7 +94,7 @@ export const Card = (props) => {
                     <Box py={5} >
                         <HStack>
                             <CrossMintBuy max={props.max} contract={props.address} account={account} size={55}/>  
-                            <MetaMaskBuy account={account} setAccount={setAccount} size={55}/>
+                            <MetaMaskBuy account={account} setAccount={setAccount} address={props.address} size={55}/>
                         </HStack>
                     </Box>
                 }            
