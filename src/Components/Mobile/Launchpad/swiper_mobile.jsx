@@ -57,7 +57,7 @@ export function Swiper(props) {
             </motion.div>
         ))}
       </div>
-      <Box position={'absolute'} bottom={'25%'}>
+      <Box position={'absolute'} top={'1%'}>
             <Flex width={'100%'} gap={1} verticalAlign={'center'} justifyContent={'center'} align={'center'}>
             {[...Array(props.data.length)].map( (d, index) => (
                 <>

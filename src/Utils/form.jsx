@@ -27,38 +27,32 @@ function FormManager(values) {
   
 return (
     <Formik
-    initialValues={{name: "", email: ""}}
+    initialValues={{Email: "", Name: ""}}
     onSubmit={(values, actions) => {
         try{
-            handleSubmit(values)
+            actions.setSubmitting(true)
+
+            let formData = new FormData() 
+            formData.append('formSubmit', 'data');
+            for(let value in values){
+                formData.append(value, values[value])
+            }
             axios({
                 method: 'POST',
-                url: `https://api.staticforms.xyz/submit`,
-                body: values
-            //     headers: {'X-HTTP-Method-Override'}
-            //     json: true,
-            //     url: `${MailChimpConfig.URL}/lists/${MailChimpConfig.MAILING_LIST_ID}/members`,
-            //     headers: {
-            //         Authorization: `apiKey ${MailChimpConfig.apiKey}`
-            //     },
-            //     body: {
-            //     email_address: email,
-            //     status: 'subscribed',
-            //     merge_fields: {
-            //         'FNAME': firstName,
-            //         'LNAME': lastName,
-            //     }
-              })
+                url: import.meta.env.VITE_FORM_URL,
+                body: formData.entries()
+              }).then(console.log(formData))
+
         } catch (error){
             console.log(error)
         } finally{
-            actions.setSubmitting(false)
+            setTimeout(() => actions.setSubmitting(false),1000)
         }
     }}
     >
     {(props) => (
         <Form >
-        <Field name='name' validate={validateName}>
+        <Field name='Name' validate={validateName}>
             {({ field, form }) => (
             <FormControl style={{zIndex:1}} isInvalid={form.errors.name && form.touched.name}>
                 <InputGroup>
@@ -69,7 +63,7 @@ return (
                 />
                 { props.isSubmitting &&
                 <InputRightElement width={'100%'} top={-10} children={<FormHelperText>We'll never share your information.</FormHelperText>} /> }
-                <Input {...field}  rounded={'full'} color={'black'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='name' placeholder='name' mb={2}/>
+                <Input {...field}  rounded={'full'} color={'black'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='Name' placeholder='Name' mb={2}/>
                 </InputGroup>
                     <FormErrorMessage> 
                         <Text position={'absolute'} right={3} top={0}>{form.errors.name}</Text>              
@@ -77,7 +71,7 @@ return (
                 </FormControl>
             )}
         </Field>
-        <Field name='email' validate={validateEmail}>
+        <Field name='Email' validate={validateEmail}>
             {({ field, form }) => (
             <FormControl style={{zIndex:1}} isInvalid={form.errors.email && form.touched.email}>
                 <FormErrorMessage> 
@@ -89,8 +83,7 @@ return (
                     children={<AiOutlineMail size={'30px'} />}
                     color='black' _dark={{color: 'light'}}
                 />
-                <Input {...field} color={'black'} rounded={'full'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='mail' placeholder='email' mb={5}/>
-
+                <Input {...field} color={'black'} rounded={'full'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='Email' placeholder='Email' mb={5}/>
                 </InputGroup>
             </FormControl>
             )}

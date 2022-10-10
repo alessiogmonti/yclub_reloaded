@@ -19,7 +19,7 @@ const links = [
       { 'field': 'join us', 'active':false, 'available':false, }
     ]
 }, 
-  {'field': 'invest', 'active':false, 
+  {'field': 'marketplace', 'active':false, 
     'sublinks': [
       { 'field': 'collection', 'active':false, 'available':false},
       { 'field': 'marketplace', 'active':false, 'available':false},
@@ -40,7 +40,7 @@ export const LandingLogo = () => {
   const [clicked, setClicked] = useState()
   return(
     <>
-      <Box position={'absolute'} top={5} left={10}>
+      <Box position={'absolute'} top={5} left={10} >
         <Box position={'fixed'} bg={useColorModeValue('dark','light')} layerStyle={'button'} width={'auto'} height={'auto'} zIndex={5}>
           <HStack>
             <Box _hover={{bg:'whiteAlpha.200'}} px={2} >
@@ -58,12 +58,12 @@ export const LandingLogo = () => {
       <Box ml={"10%"} px={10} display={'flex'}>
         <Box height={'100vh'}>
             <Flex position={'relative'} top={"18%"} width={'60vw'} left={0}>
-                <VStack position={'absolute'} zIndex={2} left={-150} top={150} alignItems={'left'}>
+                <VStack position={'relative'} zIndex={2} left={-150} top={150} alignItems={'left'}>
                     {links.map( (d,idx) =>
                       <LinkBox key={idx} item={idx} clicked={clicked} setClicked={setClicked} offset={idx} {...d} />
                     )}
                 </VStack>
-                <Logo marginLeft={50} right={190} LogoWidth={'85%'} BackgroundWidth={400}/>
+                <Logo marginLeft={-150} right={200} LogoWidth={'85%'} BackgroundWidth={400}/>
               </Flex>
         </Box>
       </Box>
