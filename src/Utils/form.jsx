@@ -37,10 +37,9 @@ return (
             for(let value in values){
                 formData.append(value, values[value])
             }
-            axios({
+            fetch(import.meta.env.VITE_FORM_URL, {
                 method: 'POST',
-                url: import.meta.env.VITE_FORM_URL,
-                body: formData.entries()
+                body: formData
               }).then(console.log(formData))
 
         } catch (error){
