@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# gif for bunny stream
+./src/Assets/Lifestyle/lanaShowcase.gif
