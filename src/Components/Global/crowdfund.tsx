@@ -1,6 +1,6 @@
 import { Container } from '../Global/Container'
 import MediaContainer from '../../Components/Global/MediaContainer'
-import { CustomButton } from '../Global/button'
+import { CustomButton } from './customButton'
 import { Info } from '../../Assets/Home/Icons/info'
 import { Details } from '../../Components/Mobile/Menus/Home/CrowdfundDetails'
 import { Divider, Box } from "@chakra-ui/react"

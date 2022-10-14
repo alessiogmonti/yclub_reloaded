@@ -1,6 +1,6 @@
 import { Box, IconButton, useColorModeValue, Text, HStack, Link } from '@chakra-ui/react'
 import { Container } from './Container'
-import { CustomButton } from './button'
+import { CustomButton } from './customButton'
 import { Arrow } from '../../Assets/arrow'
 import { Whitepaper } from '../../Assets/whitepaper'
 import { GrDocumentPerformance } from 'react-icons/gr'

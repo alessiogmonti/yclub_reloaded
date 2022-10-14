@@ -1,53 +1,10 @@
-import { Link, IconButton, Heading, Box, useDisclosure, VStack, Divider, useColorModeValue } from '@chakra-ui/react'
+import { Link, IconButton, Center, Heading, Box, useDisclosure, VStack, Divider, useColorModeValue } from '@chakra-ui/react'
 import { AiFillCloseCircle, AiFillLeftCircle } from 'react-icons/ai'
 import { useState } from 'react'
 import { Base } from './Base'
 import { Link as RLink } from 'react-router-dom'
 
-const mainmenu = [ 
-  {'field': 'community', 'active':false, 
-    'sublinks': [
-      {
-        'field': 'philosophy', 'active':false, 'link': '/'
-      },
-      {
-        'field': 'press', 'active':false, 'link': '/'
-      },
-      {
-        'field': 'join us', 'active':false, 'link': '/'
-      }
-    ]
-}, 
-  {'field': 'invest', 'active':false, 
-    'sublinks': [
-      {
-        'field': 'collection', 'active':false, 'link': '/'
-      },
-      {
-        'field': 'marketplace', 'active':false, 'link': '/'
-      },
-      {
-        'field': 'launchpad', 'active':true, 'link': '/mint'
-      },
-      {
-        'field': 'store', 'active':false, 'link': '/'
-      }
-    ]
-}, 
-  {'field': 'about', 'active':true, 
-    'sublinks': [
-      {
-        'field': 'roadmap', 'active':true, 'link': '/roadmap'
-      },
-      {
-        'field': 'whitepaper', 'active':true, 'link': '/', 'external': 'https://docs.yclub.io/overview/yclub'
-      },
-      {
-        'field': 'team', 'active':true, 'link': '/team'
-      }
-    ]
-  }
-]
+import MenuLinks from '../../../Data/menuLinks'
 
 export function Menu(){
   const { isOpen, onToggle } = useDisclosure()
@@ -72,12 +29,12 @@ export function Menu(){
         colorScheme="blue"
         style={{zIndex:10}}
       />
-      <Base direction={'left'} toggle={isOpen} content={<MenuLinks/>} />
+      <Base direction={'left'} toggle={isOpen} content={<NavLinks/>} />
     </Box>
   )
 }
 
-const MenuLinks = () => {
+const NavLinks = () => {
   const [active, setActive] = useState(2)
   const toggle = (id) => setActive(id)
   return (
@@ -88,29 +45,32 @@ const MenuLinks = () => {
       </Link>
     </Heading>
     <VStack mt={10} spacing={5} align={'center'}>
-      { mainmenu.map( (d, index) => 
-          <Heading onClick={() => toggle(index)} variant="Menu" textAlign={'center'} color={index==active? 'white' : useColorModeValue('rgba(240,240,240,0.9)','rgba(155,155,155,1)')}>
+      { MenuLinks.map( (d, index) => 
+          <Heading onClick={() => toggle(index)} variant="Menu" textAlign={'center'} color={index==active? 'accent' : useColorModeValue('rgba(5,21,52,0.15)','rgba(155,155,155,1)')}>
             {d.field}
           </Heading>
         )}
       <Divider width={'60%'}/> 
-      <VStack mt={10} spacing={8} align={'center'} overflow={'visible'}>     
-        { mainmenu[active].sublinks.map( (d) =>
-              d.external ? (
-                <Link isExternal href={d.external} >
-                  <Heading variant="SubMenu" textAlign={'center'} color={d.active? 'white' : useColorModeValue('rgba(240,240,240,0.9)','rgba(155,155,155,1)') }>
-                    {d.field}
-                  </Heading>
-                </Link>
-              ) : (
-                <Link as={RLink} to={d.link} >
-                  <Heading variant="SubMenu" textAlign={'center'} color={d.active? 'white' : useColorModeValue('rgba(240,240,240,0.9)','rgba(155,155,155,1)') }>
+      <VStack mt={10} spacing={8} align={'center'} overflow={'visible'}> 
+        { MenuLinks[active].sublinks ? ( 
+            MenuLinks[active].sublinks.map( (d) =>
+                <Link as={RLink} to={d.availalbe? d.field : '/'} >
+                  <Heading variant="SubMenu" textAlign={'center'} color={d.available? useColorModeValue('dark','light') : useColorModeValue('rgba(5,21,52,0.15)','rgba(155,155,155,1)') }>
                     {d.field}
                   </Heading>
                 </Link>
               )
-              )
-            }
+            ) : (
+              MenuLinks[active].url && 
+                <Center >
+                  <Link isExternal href={MenuLinks[active].url}> 
+                    <Heading color={'accent'}> 
+                      COMING SOON
+                    </Heading> 
+                  </Link>
+                </Center>
+            )
+        }
       </VStack>
     </VStack>
   </Box>

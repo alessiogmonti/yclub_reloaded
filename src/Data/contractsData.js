@@ -1,3 +1,22 @@
+const ContractsData = [ 
+  {price: '1.5', rarity:'LEGENDARY', deltaSupply: -7, max: 3,
+    stock_amt:150, access:'whitelist', start: 1660672800, end: 1660759200,
+    address:"0xe27969820B3F24f192c774a19AdFaeAAF73A0556"},
+  {price: '0.12', rarity:'RARE', deltaSupply: 0, max: 10,
+    stock_amt:5000, access:'public mint', start: 1662008400, end: 1667341099,
+    address: "0x1bc2Cb2168B00170B3bE4b280F230DbC58D502a3"},
+  {price: '0.39', rarity: 'EPIC', deltaSupply: 0, max: 3,
+    stock_amt:650, access:'whitelist', start: 16608456000, end: 16608528000,
+    address: "0x69C113702b55f3785c3C13458Fd31605CD79Fd81"},
+  {price: '0.28', rarity: 'S.RARE', deltaSupply: 0, max: 3,
+    stock_amt:1200, access:'whitelist', start: 16609320000, end: 16609392000,
+    address: "0x70959716f53b1a4FaC931360a21c991C6e62c98A"},
+]
+
+export default ContractsData;
+
+//1664496000
+
 // const contractsData = [
 //   {
 //     address: "0xe27969820B3F24f192c774a19AdFaeAAF73A0556",
@@ -43,22 +62,3 @@
 //     price: "0.28",
 //   },
 // ];
-
-const ContractsData = [ 
-  {price: '1.5', rarity:'LEGENDARY', deltaSupply: -7, max: 3,
-    stock_amt:150, access:'whitelist', start: 1660672800, end: 1660759200,
-    address:"0xe27969820B3F24f192c774a19AdFaeAAF73A0556"},
-  {price: '0.12', rarity:'RARE', deltaSupply: 0, max: 10,
-    stock_amt:5000, access:'public mint', start: 1662008400, end: 1665936976,
-    address: "0x1bc2Cb2168B00170B3bE4b280F230DbC58D502a3"},
-  {price: '0.39', rarity: 'EPIC', deltaSupply: 0, max: 3,
-    stock_amt:650, access:'whitelist', start: 16608456000, end: 16608528000,
-    address: "0x69C113702b55f3785c3C13458Fd31605CD79Fd81"},
-  {price: '0.28', rarity: 'S.RARE', deltaSupply: 0, max: 3,
-    stock_amt:1200, access:'whitelist', start: 16609320000, end: 16609392000,
-    address: "0x70959716f53b1a4FaC931360a21c991C6e62c98A"},
-]
-
-export default ContractsData;
-
-//1664496000

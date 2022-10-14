@@ -51,7 +51,7 @@ export const Card = (props) => {
     })
     return (
     <>
-        <Flex position={'absolute'} top={0} width={'100%'} px={1} gap={1} zIndex={3}>
+        <Flex position={'absolute'} top={0} width={'100%'} px={1} gap={1} zIndex={2}>
             <Box layerStyle={'button'} height={'100%'} px={3} >
                 <Heading textAlign={'center'} color={'accent'}>
                     {props.price}ETH
@@ -65,8 +65,8 @@ export const Card = (props) => {
             </Box>
         </Flex>
         <Box width={'100%'} my={'35px'} alignItems={'center'} justifyContent={'center'}>
-            <Image boxSize={'100%'} src={lanaImg} alt='Lana_arctic' borderRadius={'65px'} position={'relative'} style={{zIndex:2}}/>
-            <Flex justifyContent={'center'} position={'relative'} zIndex={1} >
+            <Image boxSize={'100%'} src={lanaImg} alt='Lana_arctic' borderRadius={'65px'} position={'relative'} style={{zIndex:1}}/>
+            <Flex justifyContent={'center'} position={'relative'} zIndex={-1} >
                 <Box   
                     position={'relative'}
                     bg={useColorModeValue('rgba(255,255,255,0.5)', 'dark')} 
@@ -114,7 +114,7 @@ export const Card = (props) => {
                 </Box>
             </Flex>
         </Box>
-        <Flex position={'absolute'} bottom={0} left={-6} width={'100vw'} px={6} gap={2} zIndex={4}>
+        <Flex position={'absolute'} bottom={0} left={-6} width={'100vw'} px={6} gap={2} zIndex={2}>
             {countdown? (
                <Flex position={'relative'} width={'100vh'} direction={'row'} gap={0} margin={'auto'} justifyContent={'space-between'}>
                     <MetaMaskBuy account={account} setAccount={setAccount} iconSize={'40'}/>

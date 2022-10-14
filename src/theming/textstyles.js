@@ -92,7 +92,7 @@ export const Text = {
             fontFamily: 'Space Grotesk',
             fontStyle: 'normal',
             fontWeight: '400',
-            fontSize: ['39px',null,null,null,null],
+            fontSize: ['35px',null,null,null,null],
             lineHeight: '44px',
             color: mode( 'dark', 'light') (props)
         }),

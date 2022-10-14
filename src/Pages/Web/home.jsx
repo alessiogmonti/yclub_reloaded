@@ -42,21 +42,30 @@ const Home = () => (
             <DarkModeSwitch />
             <Show breakpoint='(min-width: 1114px)'> 
                 <Box width={'100vw'}>
-                <Box position={'relative'} height={'100vh'}/>
-            <WebLanding />
-                        <Box height={'15vh'} margin={'auto'} padding={10}/>
-            <Video />
-                <Box height={'15vh'} margin={'auto'} padding={10}/>
-                        <Show breakpoint="(max-height:600px)">
+                    <Box position={'relative'} height={'100vh'}/>
+                    
+                    <WebLanding />
+                    
+                    <Box height={'15vh'} margin={'auto'} padding={10}/>
+                    
+                    <Video />
+                    
+                    <Box height={'15vh'} margin={'auto'} padding={10}/>
+                    
+                    <Show breakpoint="(max-height:600px)">
                         <Box height={'100vh'} margin={'auto'} padding={10}/>
-                        </Show>
-            <WebTokenomics />
-                <Box height={'15vh'} margin={'auto'} padding={10}/>
-                        <Show breakpoint="(max-height:600px)">
+                    </Show >
+                    
+                    <WebTokenomics />
+                    
+                    <Box height={'15vh'} margin={'auto'} padding={10}/>
+                    
+                    <Show breakpoint="(max-height:600px)">
                         <Box height={'60vh'} margin={'auto'} padding={10}/>
-                        </Show>
-            <WebJoin />
-            </Box>
+                    </Show>
+                    
+                    <WebJoin />
+                </Box>
             </Show>
         </Box>
     </>

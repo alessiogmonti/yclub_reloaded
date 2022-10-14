@@ -1,7 +1,7 @@
 import { Container } from '../../Global/Container'
 import { Center, Circle, Text, SimpleGrid, Box, VStack, Divider, Show } from '@chakra-ui/react'
 import { Allocations } from '../../../Assets/Home/Chart/mobileChart'
-import { CustomButton } from '../../Global/button'
+import { CustomButton } from '../../Global/customButton'
 import { Info } from '../../../Assets/Home/Icons/info'
 import { Details } from '../Menus/Home/TokenomicsDetails'
 import { useEffect, useState } from 'react'

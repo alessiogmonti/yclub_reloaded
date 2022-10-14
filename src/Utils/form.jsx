@@ -2,7 +2,7 @@ import { FormControl, Text, Spinner,
          FormErrorMessage, Input, 
          InputGroup, InputLeftElement, InputRightElement,
         FormHelperText, Box, } from '@chakra-ui/react'
-import { CustomButton } from '../Components/Global/button'
+import { CustomButton } from '../Components/Global/customButton'
 import { Formik, Field, Form } from 'formik'
 import { AiOutlineMail } from 'react-icons/ai'
 import { BsPersonFill } from 'react-icons/bs'
