@@ -5,6 +5,9 @@ import { Info } from '../../Assets/Home/Icons/info'
 import { Details } from '../../Components/Mobile/Menus/Home/CrowdfundDetails'
 import { Divider, Box } from "@chakra-ui/react"
 
+const mobilemedia = <div style={{position: 'relative', paddingTop: '177.77777777777777%'}}><iframe src="https://iframe.mediadelivery.net/embed/61195/6480af9c-5292-4857-ad8f-72d7ae71a4ae?autoplay=true&loop=false&muted=true" loading="lazy" style={{border: "none", position: "absolute", top: 0, height: "100%", width: "100%", borderRadius:'50px'}} allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowFullScreen={true}></iframe></div>
+const webmedia = <div style={{position: 'relative', paddingTop:' 56.25%'}}><iframe src="https://iframe.mediadelivery.net/embed/61195/0cbedb30-9d95-4757-9527-643abfaf302d?autoplay=true&loop=false&muted=true" loading="lazy" style={{border: "none", position: "absolute", top: 0, height: "100%", width: "100%", borderRadius:'50px'}} allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowFullScreen={true}></iframe></div>
+
 const iconStyle = {
   stroke: 'rgba(5,21,52,0.88)',
   strokeWidth: '0.25px',
@@ -16,7 +19,7 @@ const iconStyle = {
 const Video = () => (
   <Box position={'relative'} display={'block'} height={'100vh'} mb={[null,null,null,null,null]}>
     <Container width="100%" position={'relative'} mx={[null]} direction={'column'} > 
-      <MediaContainer />
+      <MediaContainer mobilemedia={mobilemedia} webmedia={webmedia}/>
       <Divider my={10} width={['50%']}/>
       <CustomButton 
         bg={'rgba(5,21,52,0.96)'}

@@ -49,12 +49,7 @@ export const PhotoGrid = (props) => {
 		>
 			{imagePaths.map((d, idx) => (
 				<GridItem area={`area${idx + 1}`} maxH={"100%"} minH={0}>
-					<Image
-						src={d}
-						boxSize={"100%"}
-						moobjectFit={"cover"}
-						rounded={"5%"}
-					/>
+					<Image src={d} boxSize={"100%"} objectFit={"cover"} rounded={"5%"} />
 				</GridItem>
 			))}
 		</Grid>

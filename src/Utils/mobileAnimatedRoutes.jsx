@@ -5,8 +5,7 @@ import Home from "../Pages/Mobile/home";
 import MobileRoadmap from "../Pages/Mobile/mobileRoadmap";
 import MobileTeam from "../Pages/Mobile/mobileTeam";
 import MobileLaunchpad from "../Pages/Mobile/mobileLaunchpad";
-
-import { Landing } from "../Components/Web/Lifestyle/landing";
+import MobileLifestyle from "../Pages/Mobile/mobileLifestyle";
 
 import ContractsData from "../Data/contractsData";
 
@@ -30,7 +29,7 @@ export function MobileAnimatedRoutes() {
 						path="mint"
 						element={<MobileLaunchpad data={ContractsData} />}
 					/>
-					<Route path="lifestyle" element={<Landing />} />
+					<Route path="lifestyle" element={<MobileLifestyle />} />
 					{/* <Route path="*" element={<NoPage />} */}
 				</Route>
 			</Routes>
