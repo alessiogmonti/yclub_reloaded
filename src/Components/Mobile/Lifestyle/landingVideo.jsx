@@ -1,9 +1,8 @@
-import { Container } from "../Global/Container";
-import MediaContainer from "../../Components/Global/MediaContainer";
-import { CustomButton } from "./customButton";
-import { Info } from "../../Assets/Home/Icons/info";
-import { Details } from "../../Components/Mobile/Menus/Home/CrowdfundDetails";
-import { Divider, Box } from "@chakra-ui/react";
+import { Container } from "../../Global/Container";
+import MediaContainer from "../../Global/MediaContainer";
+import { CustomButton } from "../../Global/customButton";
+import { Info } from "../../../Assets/Home/Icons/info";
+import { Divider, Box, Image } from "@chakra-ui/react";
 
 import mobilemedia from "../../../Assets/Lifestyle/lanaShowcase.gif";
 
@@ -19,7 +18,7 @@ export const LandingVideo = () => (
 	<Box
 		position={"relative"}
 		display={"block"}
-		height={"100vh"}
+		height={"100%"}
 		mb={[null, null, null, null, null]}
 	>
 		<Container
@@ -28,17 +27,12 @@ export const LandingVideo = () => (
 			mx={[null]}
 			direction={"column"}
 		>
-			<MediaContainer mobilemedia={mobilemedia} webmedia={null} />
-			<Divider my={10} width={["50%"]} />
-			<CustomButton
-				bg={"rgba(5,21,52,0.96)"}
-				zVal={6}
-				variant={"main-link"}
-				accent_text={"learn"}
-				regular_text={"more"}
-				icon={<Info {...iconStyle} />}
-				content={<Details />}
+			<MediaContainer
+				mobilemedia={<Image src={mobilemedia} />}
+				webmedia={null}
 			/>
+			<Divider my={10} width={["50%"]} />
+			<Heading></Heading>
 			<Divider my={10} width={["50%"]} />
 		</Container>
 	</Box>
