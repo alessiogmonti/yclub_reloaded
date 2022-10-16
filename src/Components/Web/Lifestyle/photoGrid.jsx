@@ -1,28 +1,40 @@
 import { Grid, GridItem, Box, Heading, Image } from "@chakra-ui/react";
+import { useEffect } from "react";
 
-// import { LifestyleImages } from "../../../Data/lifestyleImages";
+import { LifestyleImages } from "../../../Data/lifestyleImages";
 
-const urlPrivate = "../../../Assets/Lifestyle/gridImages/Monaco/*.jpg";
-const urlPublic = "/Lifestyle/gridImages/Monaco/*.jpg";
+// const urlPrivate = "../../../Assets/Lifestyle/gridImages/Monaco/*.jpg";
+// const urlPublic = "/Lifestyle/gridImages/Monaco/*.jpg";
 const modules = import.meta.glob(
-	"../../../Assets/Lifestyle/gridImages/Monaco/*.jpg"
+	"../../../Assets/Lifestyle/gridImages/Monaco/*.jpg",
+	{ as: "url", eager: true }
 );
-const imagePaths = [];
+
 console.log(modules);
+const imagePaths = [];
 for (const path in modules) {
-	modules[path]().then(() => {
-		const p = new URL(path, import.meta.url);
-		const data = {
-			path: p.pathname,
-			// area: p.pathname.split("!")[1].split(".")[0],
-		};
-		console.log(imagePaths);
-		imagePaths.push(data);
-	});
+	const p = new URL(path, import.meta.url).href;
+	console.log(p);
+	imagePaths.push(p);
+	// modules[path]().then(() => {
+	// 	const p = new URL(path, import.meta.url);
+	// 	const data = {
+	// 		path: p.pathname,
+	// 		// area: p.pathname.split("!")[1].split(".")[0],
+	// 	};
+	// 	console.log(imagePaths);
+	// 	imagePaths.push(data);
+	// });
 }
 
 export const PhotoGrid = (props) => {
 	// const imagePaths = LifestyleImages[props.section];
+
+	// useEffect(() => {
+	// 	(async () => {
+	// 		return;
+	// 	})();
+	// }, []);
 	return (
 		<Grid
 			height={"auto"}
@@ -38,9 +50,9 @@ export const PhotoGrid = (props) => {
 			{imagePaths.map((d, idx) => (
 				<GridItem area={`area${idx + 1}`} maxH={"100%"} minH={0}>
 					<Image
-						src={d.path}
+						src={d}
 						boxSize={"100%"}
-						objectFit={"cover"}
+						moobjectFit={"cover"}
 						rounded={"5%"}
 					/>
 				</GridItem>
