@@ -13,7 +13,7 @@ import {
 	Link,
 	Flex,
 } from "@chakra-ui/react";
-import { FaCheckCircle, FaCircleNotch } from "react-icons/fa";
+import { FaCheckCircle, FaRegTimesCircle } from "react-icons/fa";
 
 import { MembershipData } from "../../../Data/membershipData";
 
@@ -175,7 +175,7 @@ function Value(props) {
 			) : props.item ? (
 				<ListIcon as={FaCheckCircle} color="green.500" />
 			) : (
-				<ListIcon as={FaCircleNotch} color="gray.500" />
+				<ListIcon as={FaRegTimesCircle} color="gray.500" />
 			)}
 		</ListItem>
 	);

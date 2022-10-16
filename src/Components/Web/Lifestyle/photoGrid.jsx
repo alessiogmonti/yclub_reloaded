@@ -1,24 +1,28 @@
 import { Grid, GridItem, Box, Heading, Image } from "@chakra-ui/react";
 
+// import { LifestyleImages } from "../../../Data/lifestyleImages";
+
+const urlPrivate = "../../../Assets/Lifestyle/gridImages/Monaco/*.jpg";
+const urlPublic = "/Lifestyle/gridImages/Monaco/*.jpg";
 const modules = import.meta.glob(
 	"../../../Assets/Lifestyle/gridImages/Monaco/*.jpg"
 );
-
 const imagePaths = [];
-
+console.log(modules);
 for (const path in modules) {
 	modules[path]().then(() => {
 		const p = new URL(path, import.meta.url);
 		const data = {
-			url: p.pathname,
-			area: p.pathname.split("!")[1].split(".")[0],
+			path: p.pathname,
+			// area: p.pathname.split("!")[1].split(".")[0],
 		};
-		console.log(data);
+		console.log(imagePaths);
 		imagePaths.push(data);
 	});
 }
 
-export const PhotoGrid = () => {
+export const PhotoGrid = (props) => {
+	// const imagePaths = LifestyleImages[props.section];
 	return (
 		<Grid
 			height={"auto"}
@@ -31,10 +35,10 @@ export const PhotoGrid = () => {
 			gridTemplateRows="repeat(2, 1fr)"
 			gap={3}
 		>
-			{imagePaths.map((d) => (
-				<GridItem area={d.area} maxH={"100%"} minH={0}>
+			{imagePaths.map((d, idx) => (
+				<GridItem area={`area${idx + 1}`} maxH={"100%"} minH={0}>
 					<Image
-						src={d.url}
+						src={d.path}
 						boxSize={"100%"}
 						objectFit={"cover"}
 						rounded={"5%"}

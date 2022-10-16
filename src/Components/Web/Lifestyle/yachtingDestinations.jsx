@@ -55,7 +55,7 @@ export const YachtingDestinations = () => (
 						margin={"auto"}
 						pt={"2%"}
 					>
-						<PhotoGrid />
+						<PhotoGrid section={"Monaco"} />
 					</Flex>
 				</Box>
 			</Box>
