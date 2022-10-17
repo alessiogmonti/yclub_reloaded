@@ -142,7 +142,7 @@ function PriceCard(props) {
 					py={4}
 					borderBottomRadius={"xl"}
 				>
-					<List spacing={3} textAlign="start" px={12}>
+					<List spacing={3} textAlign="start" px={4}>
 						{MembershipData.map((d) => (
 							<Value item={d.access[props.rarity]} />
 						))}

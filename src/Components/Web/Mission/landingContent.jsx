@@ -6,9 +6,11 @@ import {
 	Flex,
 	VStack,
 	Image,
+	Button,
+	ButtonGroup,
 } from "@chakra-ui/react";
 import { AiOutlineDownCircle } from "react-icons/ai";
-
+import { GiAnchor } from "react-icons/gi";
 import ship from "../../../Assets/Mission/shipinyard.png";
 import lanaGold from "../../../Assets/Mission/lanaGold.png";
 
@@ -26,6 +28,30 @@ export const LandingContent = () => (
 			>
 				WHO WE ARE
 			</Heading>
+			<ButtonGroup
+				isAttached
+				position={"relative"}
+				display={"block"}
+				top={10}
+				left={"50%"}
+			>
+				<Button
+					rounded={"full"}
+					bg={"light"}
+					_dark={{ bg: "black" }}
+					borderColor={"accent"}
+					borderWidth={"1px"}
+				>
+					<Heading bgGradient={"radial( #008AFF,#FF3EFF)"} bgClip={"text"}>
+						JOIN YCLUB
+					</Heading>
+				</Button>
+				<IconButton
+					bg={"light"}
+					_dark={{ bg: "black" }}
+					icon={<GiAnchor fontSize={"25px"} />}
+				/>
+			</ButtonGroup>
 		</Box>
 		<Box
 			position={"relative"}
@@ -80,7 +106,7 @@ export const LandingContent = () => (
 		<Flex width={"100%"} justifyContent={"center"}>
 			<div style={{ position: "relative", paddingTop: "56.60377358490566%" }}>
 				<iframe
-					src="https://iframe.mediadelivery.net/embed/67633/6ff902d1-6b13-4ec3-b333-13820f64cd52?autoplay=true&muted=true"
+					src="https://iframe.mediadelivery.net/play/67633/6ff902d1-6b13-4ec3-b333-13820f64cd52"
 					loading="lazy"
 					style={{
 						border: "none",

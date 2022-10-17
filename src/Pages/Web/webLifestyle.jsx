@@ -1,4 +1,12 @@
-import { Box, Divider, Flex } from "@chakra-ui/react";
+import {
+	Box,
+	Divider,
+	Flex,
+	HStack,
+	Button,
+	Text,
+	Heading,
+} from "@chakra-ui/react";
 import { LandingContent } from "../../Components/Web/Lifestyle/landingContent";
 import { Subtitle } from "../../Components/Web/Lifestyle/subtitle";
 import { YachtingDestinations } from "../../Components/Web/Lifestyle/yachtingDestinations";
@@ -18,8 +26,25 @@ const WebLifestyle = () => {
 			<YachtingDestinations />
 			<Flex width={"100%"} justifyContent={"center"}>
 				<Divider width={"70%"} my={10} />
-			</Flex>{" "}
-			<ShipyardPartnerships />
+			</Flex>
+			<Box position={"relative"}>
+				<Flex width={"100%"} justifyContent={"center"}>
+					<Heading
+						variant={"Landing"}
+						color={"light"}
+						fontSize={["15px", "10px", "15px", "20px", "25px"]}
+						letterSpacing={"2px"}
+						textTransform={"lowercase"}
+						lineHeight={"28px"}
+						width={"80%"}
+					>
+						Get access to the makings of some of the most illustrious super
+						yachts and the teams behind them by seeing the shipyards where
+						they’re born.
+					</Heading>
+				</Flex>
+				<ShipyardPartnerships />
+			</Box>
 			<Flex width={"100%"} justifyContent={"center"}>
 				<Divider width={"70%"} my={10} />
 			</Flex>{" "}
