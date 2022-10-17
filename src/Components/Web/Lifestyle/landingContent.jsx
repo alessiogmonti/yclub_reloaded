@@ -1,4 +1,4 @@
-import lana from "../../../Assets/Lifestyle/lanaShowcase.gif";
+import lana from "/Lifestyle/lanaShowcase.gif";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import {
 	Box,

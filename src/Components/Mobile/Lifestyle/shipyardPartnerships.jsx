@@ -1,11 +1,18 @@
 import { useRef, useEffect } from "react";
-import { Box, Image, Flex, Heading, Divider, VStack } from "@chakra-ui/react";
+import { Box, Image, Flex, Heading, Divider, VStack, Text } from "@chakra-ui/react";
 import { motion, useInView } from "framer-motion";
 
 let shipyardData = {
 	lurssen: {
 		logo: "/Lifestyle/shipyardLogos/lurssen.png",
 		image: "/Lifestyle/shipyardPartners/lurssen.png",
+		text: `On 27 June 1875 the 24 year-old Friedrich Lürssen set up a 
+        boatbuilding workshop in Aumund. Today, Lürssen designs and
+        constructs yachts, naval ships and special vessels. Trading as
+        Lürssen Yachts, it is one of the leading builders of custom
+        superyachts such as Paul Allen's Octopus, David Geffen's Rising Sun,
+        Disbar, Flying Fox and Khalifa bin Zayed Al Nahyan's Azzam, the
+        second largest private yacht in the world.`,
 	},
 	feadship: {
 		logo: "/Lifestyle/shipyardLogos/feadship.png",
@@ -104,6 +111,7 @@ export const ShipyardPartnerships = () => {
 								objectFit={"contain"}
 								rounded={"lg"}
 							/>
+							<Text position={"absolute"}>{key[1].text}</Text>
 						</Box>
 					))}
 				</VStack>

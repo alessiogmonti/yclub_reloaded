@@ -4,7 +4,7 @@ import { CustomButton } from "../../Global/customButton";
 import { Info } from "../../../Assets/Home/Icons/info";
 import { Divider, Box, Image, Heading, Flex } from "@chakra-ui/react";
 
-import mobilemedia from "../../../Assets/Lifestyle/lanaShowcase.gif";
+import mobilemedia from "/Lifestyle/lanaShowcase.gif";
 
 const iconStyle = {
 	stroke: "rgba(5,21,52,0.88)",
