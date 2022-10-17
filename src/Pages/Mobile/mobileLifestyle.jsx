@@ -24,6 +24,7 @@ import {
 	Flex,
 	Wrap,
 	WrapItem,
+	Text,
 } from "@chakra-ui/react";
 
 const locations = [
@@ -104,7 +105,11 @@ const MobileLifestyle = () => {
 						<Wrap maxW={"90vw"}>
 							{shipyards.map((d) => (
 								<WrapItem>
-									<Button onClick={() => setPartner(d[1])}>{d[0]}</Button>
+									<Button onClick={() => setPartner(d[1])}>
+										<Text fontSize={"12px"} p={0}>
+											{d[0]}
+										</Text>
+									</Button>
 								</WrapItem>
 							))}
 						</Wrap>

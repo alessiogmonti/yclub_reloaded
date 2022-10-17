@@ -70,7 +70,7 @@ export const ShipyardPartnerships = (props) => {
 					</Box>
 				</Flex>
 			</Box>
-			<Box height={"55vh"}>
+			<Box height={"50vh"}>
 				{/* <Box
 					mt={5}
 					// padding={4}

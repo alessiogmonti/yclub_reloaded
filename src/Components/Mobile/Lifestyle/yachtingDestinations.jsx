@@ -67,12 +67,12 @@ export const YachtingDestinations = (props) => {
 					</Box>
 				</Flex>
 			</Box>
-			<Box height={"55vh"}>
+			<Box height={"45vh"}>
 				<Box
 					mt={5}
 					// padding={4}
 					w="100%"
-					h={"100%"}
+					h={"90%"}
 					maxW="900px"
 					mx="auto"
 					// bg="gray.800"

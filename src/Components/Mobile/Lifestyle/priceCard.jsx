@@ -8,8 +8,11 @@ import {
 	ListIcon,
 	Button,
 	useColorModeValue,
+	HStack,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
+import { MembershipData } from "../../../Data/membershipData";
+import { FaCheckCircle, FaRegTimesCircle } from "react-icons/fa";
 
 export function PriceCard(props) {
 	return (
@@ -24,7 +27,7 @@ export function PriceCard(props) {
 			>
 				<Stack
 					textAlign={"center"}
-					p={6}
+					p={1}
 					color={useColorModeValue("gray.800", "white")}
 					align={"center"}
 				>
@@ -32,7 +35,7 @@ export function PriceCard(props) {
 						fontSize={"sm"}
 						fontWeight={500}
 						bg={useColorModeValue("green.50", "green.900")}
-						p={2}
+						p={0}
 						px={3}
 						color={"green.500"}
 						rounded={"full"}
@@ -40,51 +43,75 @@ export function PriceCard(props) {
 						{props.status}
 					</Text>
 					<Stack direction={"row"} align={"center"} justify={"center"}>
-						<Text fontSize={"3xl"}>ETH</Text>
-						<Text fontSize={"6xl"} fontWeight={800}>
+						<Text fontSize={"1xl"}>ETH</Text>
+						<Text fontSize={"2xl"} fontWeight={800}>
 							{props.price}
 						</Text>
 					</Stack>
 				</Stack>
 
 				<Box bg={useColorModeValue("gray.50", "gray.900")} px={3} py={5}>
-					<List spacing={3}>
-						<ListItem>
-							<ListIcon as={CheckIcon} color="green.400" />
-							5.000 page views
-						</ListItem>
-						<ListItem>
-							<ListIcon as={CheckIcon} color="green.400" />
-							50 automation executions
-						</ListItem>
-						<ListItem>
-							<ListIcon as={CheckIcon} color="green.400" />
-							50 identified users
-						</ListItem>
-						<ListItem>
-							<ListIcon as={CheckIcon} color="green.400" />
-							All features
-						</ListItem>
-					</List>
-
-					<Button
-						mt={10}
-						w={"full"}
-						bg={"green.400"}
-						color={"white"}
-						rounded={"xl"}
-						boxShadow={"0 5px 20px 0px rgb(72 187 120 / 43%)"}
-						_hover={{
-							bg: "green.500",
-						}}
-						_focus={{
-							bg: "green.500",
-						}}
-					>
-						Start your trial
-					</Button>
+					<Box overflow={"scroll"} maxH={"16vh"}>
+						<List spacing={3}>
+							{MembershipData.map((d) => (
+								<HStack justifyContent={"space-between"}>
+									<ListItem> {d.benefit}</ListItem>
+									<Value item={d.access[props.rarity]} />
+								</HStack>
+							))}
+						</List>
+					</Box>
+					{props.available ? (
+						<Button
+							mt={10}
+							w={"full"}
+							bg={"blue.400"}
+							color={"white"}
+							rounded={"xl"}
+							boxShadow={"0 5px 20px 0px rgb(172 187 120 / 43%)"}
+							_hover={{
+								bg: "blue.500",
+							}}
+							_focus={{
+								bg: "blue.500",
+							}}
+						>
+							Buy Now
+						</Button>
+					) : (
+						<Button
+							mt={10}
+							w={"full"}
+							bg={"gray.400"}
+							color={"white"}
+							rounded={"xl"}
+							boxShadow={"0 5px 20px 0px rgb(222 222 222 / 43%)"}
+							_hover={{
+								bg: "gray.400",
+							}}
+							_focus={{
+								bg: "gray.400",
+							}}
+						>
+							{props.status}
+						</Button>
+					)}
 				</Box>
 			</Box>
 		</Center>
+	);
+}
+
+function Value(props) {
+	return (
+		<ListItem>
+			{String(props.item) === props.item ? (
+				<Text>{props.item}</Text>
+			) : props.item ? (
+				<ListIcon as={FaCheckCircle} color="green.500" />
+			) : (
+				<ListIcon as={FaRegTimesCircle} color="gray.500" />
+			)}
+		</ListItem>
 	);
 }
