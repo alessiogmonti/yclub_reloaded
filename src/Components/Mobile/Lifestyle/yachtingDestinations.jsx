@@ -55,10 +55,10 @@ export const YachtingDestinations = (props) => {
 						<Heading
 							variant={"Landing"}
 							color={"dark"}
-							fontSize={["19px", "10px", "15px", "20px", "25px"]}
-							letterSpacing={"2px"}
+							fontSize={["18px", "10px", "15px", "20px", "25px"]}
+							letterSpacing={"1px"}
 							textTransform={"lowercase"}
-							lineHeight={"25px"}
+							lineHeight={"23px"}
 							textAlign={"center"}
 						>
 							Travel to the alluring coasts of some of the most enchanting
@@ -66,23 +66,6 @@ export const YachtingDestinations = (props) => {
 						</Heading>
 					</Box>
 				</Flex>
-				{/* <Flex width={"100%"} justifyContent={"space-around"}>
-					<Box width={"80%"}>
-						<Divider width={"100%"} my={5} />
-						<HStack>
-							{locations.map((d) => (
-								<Heading
-									fontSize={"15px"}
-									textTransform={"uppercase"}
-									width={"100%"}
-								>
-									{d}
-								</Heading>
-							))}
-						</HStack>
-						<Divider width={"90%"} my={5} />
-					</Box>
-				</Flex> */}
 			</Box>
 			<Box height={"55vh"}>
 				<Box
@@ -110,64 +93,6 @@ export const YachtingDestinations = (props) => {
 					))}
 				</Box>
 			</Box>
-			{/* <Box
-				position={"relative"}
-				width={"100vw"}
-				maxWidth={"100vw"}
-				height={"50vh"}
-				overflow={"scroll"}
-			>
-				<HStack
-					position={"relative"}
-					overflow={"scroll"}
-					ref={rootRef}
-					height={"95%"}
-					maxW={"100%"}
-					maxH={"95%"}
-				>
-					{images.map((d) => (
-						<>
-							<Box
-								ref={imgRef}
-								minWidth={"100%"}
-								height={"100%"}
-								border={"1px solid white"}
-								display={"flex"}
-							>
-								<Image
-									src={d[1]}
-									boxSize={"100%"}
-									objectFit={"cover"}
-									rounded={"lg"}
-								/>
-								<Box
-									position={"absolute"}
-									width={"100%"}
-									// style={{
-									// 	opacity: inView ? 1 : 0,
-									// 	transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-									// }}
-								>
-									<Flex width={"100%"} justifyContent={"center"}>
-										<Box
-											bg={"dark"}
-											borderColor={"accent"}
-											borderWidth={"1px"}
-											borderRadius={"lg"}
-											px={4}
-											my={2}
-										>
-											<Text color={"light"} textTransform={"uppercase"}>
-												{d[0].split("gridImages/")[1].split("/")[0]}
-											</Text>
-										</Box>
-									</Flex>
-								</Box>
-							</Box>
-						</>
-					))}
-				</HStack>
-			</Box> */}
 		</>
 	);
 };

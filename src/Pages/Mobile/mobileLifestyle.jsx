@@ -35,10 +35,19 @@ const locations = [
 	"Mykonos",
 ];
 
-const shipyards = [];
+const shipyards = [
+	["Lurssen", "lurssen"],
+	["Amels", "amels"],
+	["Benetti", "benetti"],
+	["Feadship", "feadship"],
+	["Abeking & Rasmussen", "abeking"],
+	["Admiral", "admiral"],
+	["Oceanco", "oceanco"],
+];
 
 const MobileLifestyle = () => {
 	const [filter, setFilter] = useState("Monaco");
+	const [partner, setPartner] = useState("lurssen");
 	return (
 		<>
 			<Box layerStyle={"background"} sx={{ filter: "blur(38px)" }} />
@@ -56,6 +65,8 @@ const MobileLifestyle = () => {
 				</Flex>
 			</Box>
 			<Tabs
+				lazyBehavior="keepMounted"
+				isLazy
 				variant="soft-rounded"
 				colorScheme="blue"
 				position={"fixed"}
@@ -85,11 +96,11 @@ const MobileLifestyle = () => {
 						</Wrap>
 					</TabPanel>
 					<TabPanel>
-						<ShipyardPartnerships />
+						<ShipyardPartnerships path={partner} />
 						<Wrap maxW={"90vw"}>
 							{shipyards.map((d) => (
 								<WrapItem>
-									<Button onClick={() => setFilter(d)}>{d}</Button>
+									<Button onClick={() => setPartner(d[1])}>{d[0]}</Button>
 								</WrapItem>
 							))}
 						</Wrap>

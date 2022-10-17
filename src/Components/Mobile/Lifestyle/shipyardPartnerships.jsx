@@ -48,24 +48,19 @@ let shipyardData = {
 	},
 };
 
-export const ShipyardPartnerships = () => {
-	const imgRef = useRef(null);
-	const rootRef = useRef(null);
-	const inView = useInView(imgRef, { root: rootRef, once: false });
-	return <></>;
-};
-
-```
-<Box width={"100vw"} my={10}>
-				<Flex justifyContent={"center"} width={"100%"}>
-					<Box width={"82%"} my={5}>
+export const ShipyardPartnerships = (props) => {
+	return (
+		<>
+			<Box width={"100vw"}>
+				<Flex width={"100%"} justifyContent={"center"}>
+					<Box width={"75%"} my={1} mr={3}>
 						<Heading
 							variant={"Landing"}
 							color={"dark"}
-							fontSize={["19px", "10px", "15px", "20px", "25px"]}
-							letterSpacing={"2px"}
+							fontSize={["18px", "10px", "15px", "20px", "25px"]}
+							letterSpacing={"1px"}
 							textTransform={"lowercase"}
-							lineHeight={"25px"}
+							lineHeight={"23px"}
 							textAlign={"center"}
 						>
 							Get access to the makings of some of the most illustrious super
@@ -74,65 +69,29 @@ export const ShipyardPartnerships = () => {
 						</Heading>
 					</Box>
 				</Flex>
-				<Flex width={"100%"} justifyContent={"space-around"}>
-					<Box width={"80%"}>
-						<Divider width={"100%"} my={5} />
-						{/* <HStack>
-							{locations.map((d) => (
-								<Heading
-									fontSize={"15px"}
-									textTransform={"uppercase"}
-									width={"100%"}
-								>
-									{d}
-								</Heading>
-							))}
-						</HStack> */}
-						<Divider width={"90%"} my={5} />
-					</Box>
-				</Flex>
 			</Box>
-			<Box
-				position={"relative"}
-				width={"99vw"}
-				maxWidth={"100vw"}
-				height={"60vh"}
-				overflow={"scroll"}
-			>
-				{/* <VStack
-					position={"relative"}
+			<Box height={"55vh"}>
+				{/* <Box
+					mt={5}
+					// padding={4}
+					w="100%"
+					h={"100%"}
+					maxW="900px"
+					mx="auto"
+					// bg="gray.800"
 					overflow={"scroll"}
-					ref={rootRef}
-					height={"95%"}
-					maxW={"99%"}
-					maxH={"95%"}
-				>
-					{Object.entries(shipyardData).map((key, value) => (
-						<Box
-							ref={imgRef}
-							minWidth={"100%"}
-							height={"100%"}
-							border={"1px solid white"}
-							display={"flex"}
-						>
-							<Image
-								src={key[1].image}
-								boxSize={"100%"}
-								objectFit={"contain"}
-								rounded={"lg"}
-							/>
-							{/* <Box
-								position={"absolute"}
-								width={"100%"}
-								height={"100%"}
-								bg={"dark"}
-								overflow={"scroll"}
-							> */}
-							{/* <Text position={"absolute"} width={"80%"} color={"light"}>
-								{key[1].text}
-							</Text>
-							{/* </Box> */}
-						{/* </Box> */}
-					{/* ))} */}
-				{/* </VStack> */} 
-			</Box>```;
+				> */}
+				<Image
+					boxSize="100%"
+					objectFit={"cover"}
+					borderRadius="xl"
+					mb={1}
+					d="inline-block"
+					src={shipyardData[props.path].image}
+					alt="Alt"
+				/>
+				{/* </Box> */}
+			</Box>
+		</>
+	);
+};

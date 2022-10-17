@@ -53,7 +53,7 @@ export const YachtingDestinations = () => {
 									<Button
 										onClick={() => setLocation(d)}
 										variant={"outline"}
-										_hover={{ borderColor: "accent" }}
+										_hover={{ borderColor: "whiteAlpha.200" }}
 									>
 										<Text variant={"info"} textTransform={"uppercase"}>
 											{d}

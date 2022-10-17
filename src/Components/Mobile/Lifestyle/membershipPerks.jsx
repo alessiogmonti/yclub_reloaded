@@ -18,14 +18,14 @@ export const MembershipPerks = () => (
 				</Heading>
 				<Heading
 					variant={"WebLanding"}
-					fontSize={"25px"}
+					fontSize={"20px"}
 					color={"dark"}
 					textTransform={"uppercase"}
 					textAlign={"center"}
 				>
 					The biggest super yacht community in the world.
 				</Heading>
-				<Text fontSize="19px" color={"light"}>
+				<Text fontSize="19px" color={"dark"}>
 					Read more on our <Link>whitepaper</Link>
 				</Text>
 			</VStack>
