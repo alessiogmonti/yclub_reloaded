@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Divider, Flex } from "@chakra-ui/react";
 import { LandingContent } from "../../Components/Web/Lifestyle/landingContent";
 import { Subtitle } from "../../Components/Web/Lifestyle/subtitle";
 import { YachtingDestinations } from "../../Components/Web/Lifestyle/yachtingDestinations";
@@ -11,14 +11,22 @@ const WebLifestyle = () => {
 		<Box position={"absolute"}>
 			<Box layerStyle={"background"} sx={{ filter: "blur(38px)" }} />
 			<Box position={"relative"} height={"100vh"} />
-
 			<LandingContent />
-			<Subtitle content={"YACHTING DESTINATIONS"} />
+			{/* <Flex width={"100%"} justifyContent={"center"}>
+				<Divider width={"70%"} my={10} />
+			</Flex> */}
 			<YachtingDestinations />
-			<Subtitle content={"SHIPYARD PARTNERSHIPS"} />
+			<Flex width={"100%"} justifyContent={"center"}>
+				<Divider width={"70%"} my={10} />
+			</Flex>{" "}
 			<ShipyardPartnerships />
-			<Subtitle content={"MEMBERSHIP PERKS"} />
+			<Flex width={"100%"} justifyContent={"center"}>
+				<Divider width={"70%"} my={10} />
+			</Flex>{" "}
 			<MembershipPerks />
+			<Flex width={"100%"} justifyContent={"center"}>
+				<Divider width={"70%"} my={10} />
+			</Flex>{" "}
 			<Socials />
 			<SignUp />
 		</Box>

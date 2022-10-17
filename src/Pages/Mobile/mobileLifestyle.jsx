@@ -5,6 +5,9 @@ import { Box, Center, Heading, Flex } from "@chakra-ui/react";
 import { Hero } from "../../Components/Mobile/Hero";
 
 import { LandingVideo } from "../../Components/Mobile/Lifestyle/landingVideo";
+import { YachtingDestinations } from "../../Components/Mobile/Lifestyle/yachtingDestinations";
+import { motion } from "framer-motion";
+import { ShipyardPartnerships } from "../../Components/Mobile/Lifestyle/shipyardPartnerships";
 
 const MobileLifestyle = () => {
 	return (
@@ -24,6 +27,8 @@ const MobileLifestyle = () => {
 				</Flex>
 			</Box>
 			<LandingVideo />
+			<YachtingDestinations />
+			<ShipyardPartnerships />
 		</>
 	);
 };

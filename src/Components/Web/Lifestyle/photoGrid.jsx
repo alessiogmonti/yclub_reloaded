@@ -1,58 +1,15 @@
 import { Grid, GridItem, Box, Heading, Image } from "@chakra-ui/react";
 import { useEffect } from "react";
 
-import { LifestyleImages } from "../../../Data/lifestyleImages";
-
-// const urlPrivate = "../../../Assets/Lifestyle/gridImages/Monaco/*.jpg";
-// const urlPublic = "/Lifestyle/gridImages/Monaco/*.jpg";
-// const modules = import.meta.glob(
-// 	"../../../Assets/Lifestyle/gridImages/Monaco/*.jpg",
-// 	{ as: "url", eager: true }
-// );
-
-// console.log(modules);
-// const imagePaths = [];
-// for (const path in modules) {
-// 	const p = new URL(path, import.meta.url).href;
-// 	console.log(p);
-// 	imagePaths.push(p);
-// 	// modules[path]().then(() => {
-// 	// 	const p = new URL(path, import.meta.url);
-// 	// 	const data = {
-// 	// 		path: p.pathname,
-// 	// 		// area: p.pathname.split("!")[1].split(".")[0],
-// 	// 	};
-// 	// 	console.log(imagePaths);
-// 	// 	imagePaths.push(data);
-// 	// });
-// }
-
-// const modules = import.meta.glob(
-// 	"../../../Assets/Lifestyle/gridImages/Monaco/*.jpg",
-// 	{ as: "url", eager: true }
-// );
-
-// let imagePaths = [];
-// for (const path in modules) {
-// 	console.log(`path "${path}" => ${modules[path]}`);
-// 	imagePaths.push[(path, modules[path])];
-// }
-
-const images = Object.entries(
-	import.meta.glob("../../../Assets/Lifestyle/gridImages/Monaco/*.jpg", {
-		as: "url",
-		eager: true,
-	})
-).map(([path, src]) => [path, src]);
-
-console.log(images);
-
 export const PhotoGrid = (props) => {
-	// useEffect(() => {
-	// 	(async () => {
-	// 		return;
-	// 	})();
-	// }, []);
+	const images = Object.entries(
+		import.meta.glob("../../../Assets/Lifestyle/gridImages/**/*.jpg", {
+			as: "url",
+			eager: true,
+		})
+	)
+		.map((d) => d[0].includes(props.section.replace(" ", "_")) && [d[0], d[1]])
+		.filter(Boolean);
 	return (
 		<Grid
 			height={"auto"}
@@ -73,6 +30,7 @@ export const PhotoGrid = (props) => {
 						boxSize={"100%"}
 						objectFit={"cover"}
 						rounded={"5%"}
+						fallback
 					/>
 				</GridItem>
 			))}
