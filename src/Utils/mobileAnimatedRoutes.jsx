@@ -6,6 +6,7 @@ import MobileRoadmap from "../Pages/Mobile/mobileRoadmap";
 import MobileTeam from "../Pages/Mobile/mobileTeam";
 import MobileLaunchpad from "../Pages/Mobile/mobileLaunchpad";
 import MobileLifestyle from "../Pages/Mobile/mobileLifestyle";
+import MobileMission from "../Pages/Mobile/mobileMission";
 
 import ContractsData from "../Data/contractsData";
 
@@ -30,6 +31,7 @@ export function MobileAnimatedRoutes() {
 						element={<MobileLaunchpad data={ContractsData} />}
 					/>
 					<Route path="lifestyle" element={<MobileLifestyle />} />
+					<Route path="mission" element={<MobileMission />} />
 					{/* <Route path="*" element={<NoPage />} */}
 				</Route>
 			</Routes>

@@ -49,7 +49,11 @@ const MobileLifestyle = () => {
 	const [filter, setFilter] = useState("Monaco");
 	const [partner, setPartner] = useState("lurssen");
 	return (
-		<>
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+		>
 			<Box layerStyle={"background"} sx={{ filter: "blur(38px)" }} />
 			<Menu />
 			<DarkModeSwitch />
@@ -126,7 +130,7 @@ const MobileLifestyle = () => {
 					<Tab>MEMBERSHIP</Tab>
 				</TabList>
 			</Tabs>
-		</>
+		</motion.div>
 	);
 };
 
