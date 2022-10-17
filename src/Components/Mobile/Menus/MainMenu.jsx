@@ -73,7 +73,7 @@ const NavLinks = () => {
 				<VStack mt={10} spacing={8} align={"center"} overflow={"visible"}>
 					{MenuLinks[active].sublinks
 						? MenuLinks[active].sublinks.map((d) => (
-								<Link as={RLink} to={d.available ? d.field : "/"}>
+								<Link as={RLink} to={d.available ? "/" + d.field : "/"}>
 									<Heading
 										variant="SubMenu"
 										textAlign={"center"}
