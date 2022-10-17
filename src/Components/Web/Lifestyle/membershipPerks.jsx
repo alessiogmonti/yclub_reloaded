@@ -57,7 +57,7 @@ function TieredPricing() {
 let tiers = [
 	{ rarity: "RARE", availability: "3888/5000", price: "0.12", isMain: true },
 	{ rarity: "S.RARE", availability: "COMING SOON", price: "0.28" },
-	{ rarity: "EPIC", availability: "SOLD OUT", price: "0.39" },
+	{ rarity: "EPIC", availability: "COMING SOON", price: "0.39" },
 	{ rarity: "LEGENDARY", availability: "SOLD OUT", price: "1.5" },
 ];
 

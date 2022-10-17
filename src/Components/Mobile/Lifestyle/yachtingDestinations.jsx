@@ -8,7 +8,7 @@ import {
 	Heading,
 } from "@chakra-ui/react";
 import { useInView, motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const textVariants = {
 	offscreen: {
@@ -39,23 +39,22 @@ export const YachtingDestinations = (props) => {
 			as: "url",
 			eager: true,
 		})
-	).map((d) => [d[0], d[1]]);
+	)
+		.map((d) => d[0].includes(props.section.replace(" ", "_")) && [d[0], d[1]])
+		.filter(Boolean);
 
 	const imgRef = useRef(null);
 	const rootRef = useRef(null);
 	const inView = useInView(imgRef, { root: rootRef, once: false });
 
-	useEffect(() => {
-		console.log(inView);
-	}, [inView]);
 	return (
 		<>
-			<Box width={"100vw"} my={10}>
-				<Flex justifyContent={"center"} width={"100%"}>
-					<Box width={"82%"} my={5}>
+			<Box width={"100vw"}>
+				<Flex width={"100%"} justifyContent={"center"}>
+					<Box width={"75%"} my={1} mr={3}>
 						<Heading
 							variant={"Landing"}
-							color={"light"}
+							color={"dark"}
 							fontSize={["19px", "10px", "15px", "20px", "25px"]}
 							letterSpacing={"2px"}
 							textTransform={"lowercase"}
@@ -67,7 +66,7 @@ export const YachtingDestinations = (props) => {
 						</Heading>
 					</Box>
 				</Flex>
-				<Flex width={"100%"} justifyContent={"space-around"}>
+				{/* <Flex width={"100%"} justifyContent={"space-around"}>
 					<Box width={"80%"}>
 						<Divider width={"100%"} my={5} />
 						<HStack>
@@ -83,13 +82,39 @@ export const YachtingDestinations = (props) => {
 						</HStack>
 						<Divider width={"90%"} my={5} />
 					</Box>
-				</Flex>
+				</Flex> */}
 			</Box>
-			<Box
+			<Box height={"55vh"}>
+				<Box
+					mt={5}
+					// padding={4}
+					w="100%"
+					h={"100%"}
+					maxW="900px"
+					mx="auto"
+					// bg="gray.800"
+					sx={{ columnCount: [2], columnGap: "1px", rowCount: [4] }}
+					overflow={"scroll"}
+				>
+					{images.map((src) => (
+						<Image
+							key={src}
+							boxSize="100%"
+							objectFit={"cover"}
+							borderRadius="xl"
+							mb={1}
+							d="inline-block"
+							src={src[1]}
+							alt="Alt"
+						/>
+					))}
+				</Box>
+			</Box>
+			{/* <Box
 				position={"relative"}
 				width={"100vw"}
 				maxWidth={"100vw"}
-				height={"99vh"}
+				height={"50vh"}
 				overflow={"scroll"}
 			>
 				<HStack
@@ -97,7 +122,7 @@ export const YachtingDestinations = (props) => {
 					overflow={"scroll"}
 					ref={rootRef}
 					height={"95%"}
-					maxW={"99%"}
+					maxW={"100%"}
 					maxH={"95%"}
 				>
 					{images.map((d) => (
@@ -142,7 +167,7 @@ export const YachtingDestinations = (props) => {
 						</>
 					))}
 				</HStack>
-			</Box>
+			</Box> */}
 		</>
 	);
 };

@@ -1,5 +1,13 @@
 import { useRef, useEffect } from "react";
-import { Box, Image, Flex, Heading, Divider, VStack, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Image,
+	Flex,
+	Heading,
+	Divider,
+	VStack,
+	Text,
+} from "@chakra-ui/react";
 import { motion, useInView } from "framer-motion";
 
 let shipyardData = {
@@ -44,14 +52,16 @@ export const ShipyardPartnerships = () => {
 	const imgRef = useRef(null);
 	const rootRef = useRef(null);
 	const inView = useInView(imgRef, { root: rootRef, once: false });
-	return (
-		<>
-			<Box width={"100vw"} my={10}>
+	return <></>;
+};
+
+```
+<Box width={"100vw"} my={10}>
 				<Flex justifyContent={"center"} width={"100%"}>
 					<Box width={"82%"} my={5}>
 						<Heading
 							variant={"Landing"}
-							color={"light"}
+							color={"dark"}
 							fontSize={["19px", "10px", "15px", "20px", "25px"]}
 							letterSpacing={"2px"}
 							textTransform={"lowercase"}
@@ -89,7 +99,7 @@ export const ShipyardPartnerships = () => {
 				height={"60vh"}
 				overflow={"scroll"}
 			>
-				<VStack
+				{/* <VStack
 					position={"relative"}
 					overflow={"scroll"}
 					ref={rootRef}
@@ -111,11 +121,18 @@ export const ShipyardPartnerships = () => {
 								objectFit={"contain"}
 								rounded={"lg"}
 							/>
-							<Text position={"absolute"}>{key[1].text}</Text>
-						</Box>
-					))}
-				</VStack>
-			</Box>
-		</>
-	);
-};
+							{/* <Box
+								position={"absolute"}
+								width={"100%"}
+								height={"100%"}
+								bg={"dark"}
+								overflow={"scroll"}
+							> */}
+							{/* <Text position={"absolute"} width={"80%"} color={"light"}>
+								{key[1].text}
+							</Text>
+							{/* </Box> */}
+						{/* </Box> */}
+					{/* ))} */}
+				{/* </VStack> */} 
+			</Box>```;

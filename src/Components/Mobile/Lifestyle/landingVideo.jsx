@@ -20,18 +20,38 @@ export const LandingVideo = () => (
 		display={"block"}
 		height={"100%"}
 		mb={[null, null, null, null, null]}
+		width={"100%"}
 	>
+		<Box height={"40vh"}>
+			<MediaContainer
+				mobilemedia={
+					<Image
+						src={mobilemedia}
+						rounded={"xl"}
+						objectFit={"cover"}
+						boxSize={"100%"}
+					/>
+				}
+				webmedia={null}
+			/>
+		</Box>
 		<Container
 			width="100%"
 			position={"relative"}
 			mx={[null]}
 			direction={"column"}
 		>
-			<Divider my={10} width={["50%"]} />
+			{/* <Divider
+				my={5}
+				width={["50%"]}
+				colorScheme={"black"}
+				_dark={{ color: "light" }}
+			/> */}
 			<Flex width={"100%"} justifyContent={"center"} px={5}>
 				<Heading
 					variant={"Landing"}
-					color={"light"}
+					color={"dark"}
+					_dark={{ color: "light" }}
 					fontSize={["19px", "10px", "15px", "20px", "25px"]}
 					letterSpacing={"2px"}
 					textTransform={"lowercase"}
@@ -42,11 +62,12 @@ export const LandingVideo = () => (
 					the super yacht industry and around the world starting today!
 				</Heading>
 			</Flex>
-			<Divider my={10} width={["50%"]} />
-			<MediaContainer
-				mobilemedia={<Image src={mobilemedia} rounded={"xl"} />}
-				webmedia={null}
-			/>
+			{/* <Divider
+				my={10}
+				width={["50%"]}
+				color={"black"}
+				_dark={{ color: "light" }}
+			/> */}
 		</Container>
 	</Box>
 );
